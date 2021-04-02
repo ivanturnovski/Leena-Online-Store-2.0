@@ -1,6 +1,6 @@
 <section class="inner-hero-section">
 	{% if section.settings.image != blank %}
-	<img src="{{section.settings.image | img_url: '1024x400', crop: 'bottom' }}" alt="">
+	<img src="{{ section.settings.image | img_url: '1024x400', crop: 'bottom' }}" alt="">
 
 	{% else %}
 	{% capture current %}{% cycle 1,2%}{% endcapture %}
@@ -11,10 +11,10 @@
 	<div class="container py-5">
 		<div class="row">
 			<div class="col-lg-6 col-md-8 mx-auto text-center">
-				<h1>{{section.settings.title}}</h1>
-				{{section.settings.description}}
-				<a href="{{section.settings.button_link}}"
-					class="btn btn-secondary">{{section.settings.button_label}}</a>
+				<h1>{{ section.settings.title }}</h1>
+				{{ section.settings.description }}
+				<a href="{{ section.settings.button_link }}" class="btn btn-secondary">{{ section.settings.button_label
+					}}</a>
 			</div>
 		</div>
 	</div>
