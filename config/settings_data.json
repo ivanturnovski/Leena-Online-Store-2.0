@@ -1,6 +1,37 @@
 {
-  "current": "Default",
-  "presets": {
-    "Default": { }
-  }
+	"current": {
+		"navbar_color": "#e220d6",
+		"sections": {
+			"header": {
+				"type": "header",
+				"settings": {}
+			},
+			"1617375064ce83f223": {
+				"type": "featured-collection",
+				"settings": {
+					"featured_collection": "featured",
+					"title": "Featured Collection"
+				}
+			},
+			"1617375081919027c2": {
+				"type": "hero",
+				"settings": {
+					"image": "shopify://shop_images/KAR_20130428-3077_2048x2048_f437e396-6950-450f-9e22-a623ed09cd21.jpg",
+					"title": "Hero Heading",
+					"description": "<p>Hero Paragraph</p>",
+					"button_label": "Button"
+				}
+			},
+			"product-template": {
+				"type": "product-template",
+				"settings": {
+					"dynamic_buttons_checkbox": true
+				}
+			}
+		},
+		"content_for_index": ["1617375081919027c2", "1617375064ce83f223"]
+	},
+	"presets": {
+		"Default": {}
+	}
 }
