@@ -1,18 +1,36 @@
-{% paginate collection.products by 2 %}
-  <h1>{{ collection.title }}</h1>
-  {% for product in collection.products %}
-    <div>
-      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-      {{ product.price | money }}
-      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-      <a href="{{ product.url | within: collection }}">
-        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-      </a>
+<div class="container">
+  {% paginate collection.products by 3 %}
+  <div class="row my-5">
+    <h1 class="text-center">{{ collection.title }}</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    {% for product in collection.products %}
+    {% assign image = product.featured_media.preview_image %}
+    <div class="col-3 g-2">
+      <div class="card">
+        <div class="card-image">
+          {% if image != blank %}
+          <img class="card-img-top" src="{{ image | img_url }}" alt="{{ product.title }}">
+          {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+          <p>{{ product.price | money }}</p>
+        </div>
+      </div>
     </div>
-  {% else %}
+    {% else %}
     <p>no matches</p>
-  {% endfor %}
+    {% endfor %}
+  </div>
+
+
+
   {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
+  {{ paginate | default_pagination }}
   {% endif %}
-{% endpaginate %}
+  {% endpaginate %}
+</div>
