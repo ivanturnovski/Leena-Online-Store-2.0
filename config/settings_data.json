@@ -1,37 +1,96 @@
 {
-	"current": {
-		"navbar_color": "#e220d6",
-		"sections": {
-			"header": {
-				"type": "header",
-				"settings": {}
-			},
-			"1617375064ce83f223": {
-				"type": "featured-collection",
-				"settings": {
-					"featured_collection": "featured",
-					"title": "Featured Collection"
-				}
-			},
-			"1617375081919027c2": {
-				"type": "hero",
-				"settings": {
-					"image": "shopify://shop_images/KAR_20130428-3077_2048x2048_f437e396-6950-450f-9e22-a623ed09cd21.jpg",
-					"title": "Hero Heading",
-					"description": "<p>Hero Paragraph</p>",
-					"button_label": "Button"
-				}
-			},
-			"product-template": {
-				"type": "product-template",
-				"settings": {
-					"dynamic_buttons_checkbox": true
-				}
-			}
-		},
-		"content_for_index": ["1617375081919027c2", "1617375064ce83f223"]
-	},
-	"presets": {
-		"Default": {}
-	}
+  "current": {
+    "navbar_color": "#e220d6",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "1617375064ce83f223": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection": "featured",
+          "title": "Featured Collection"
+        }
+      },
+      "1617375081919027c2": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/KAR_20130428-3077_2048x2048_f437e396-6950-450f-9e22-a623ed09cd21.jpg",
+          "title": "Hero Heading",
+          "description": "<p>Hero Paragraph<\/p>",
+          "button_label": "Shop now",
+          "button_link": "\/collections\/"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "dynamic_buttons_checkbox": true
+        }
+      },
+      "page-template": {
+        "type": "page-template",
+        "settings": {
+          "container": "container",
+          "show_published_date": true
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "5e55eebf-bb97-496c-946c-c7e31fcb6da8": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Exampe",
+              "answer": "<p>Hello World<\/p>"
+            }
+          },
+          "336e5d8d-35a7-4bcb-a58c-c34df687de83": {
+            "type": "faq",
+            "settings": {
+              "title": "Do you fund internationally?",
+              "answer": "<p>Yes We Do!<\/p>"
+            }
+          },
+          "376ab560-d782-4360-b074-58ed5c7660e7": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Exampe",
+              "answer": "<p>Hello <\/p>"
+            }
+          },
+          "39a95bab-b44e-4475-98de-4dd65ebc6bc5": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Exampe",
+              "answer": "<p>Hello <\/p>"
+            }
+          },
+          "00985205-69c6-4735-81ab-6436b886984c": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Exampe",
+              "answer": "<p>Hello<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5e55eebf-bb97-496c-946c-c7e31fcb6da8",
+          "336e5d8d-35a7-4bcb-a58c-c34df687de83",
+          "376ab560-d782-4360-b074-58ed5c7660e7",
+          "39a95bab-b44e-4475-98de-4dd65ebc6bc5",
+          "00985205-69c6-4735-81ab-6436b886984c"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "1617375081919027c2",
+      "1617375064ce83f223"
+    ]
+  },
+  "presets": {
+    "Default": {}
+  }
 }
