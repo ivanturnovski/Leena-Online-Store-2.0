@@ -1,7 +1,16 @@
+{% paginate collection.products by 3 %}
 <div class="container">
-  {% paginate collection.products by 3 %}
   <div class="row my-5">
     <h1 class="text-center">{{ collection.title }}</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    <select name="sorting" id="sort_by" class="form-select form-select-sm w-25">
+      {% for option in collection.sort_options %}
+      {% capture selected %}{% if option.value == collection.sort_by %}selected{% endif %}{% endcapture %}
+      <option value="{{ option.value }}" {{selected}}>{{ option.name }}</option>
+      {% endfor %}
+    </select>
   </div>
 
   <div class="row justify-content-center my-5">
@@ -49,5 +58,5 @@
     </ul>
   </nav>
   {% endif %}
-  {% endpaginate %}
 </div>
+{% endpaginate %}
