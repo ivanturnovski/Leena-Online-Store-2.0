@@ -83,6 +83,47 @@
           "00985205-69c6-4735-81ab-6436b886984c"
         ],
         "settings": {}
+      },
+      "sidebar-article": {
+        "type": "sidebar-article",
+        "blocks": {
+          "970f4fd9-c219-4e2e-8a06-ef9e2119fc61": {
+            "type": "sidebar_image",
+            "settings": {
+              "title": "Shopify Cheet Sheet",
+              "image": "shopify:\/\/shop_images\/shopify-bag.png",
+              "url": "https:\/\/www.shopify.com\/partners\/shopify-cheat-sheet"
+            }
+          },
+          "b4bd4b96-44ab-4303-97e9-19c80e88a5c2": {
+            "type": "sidebar_text",
+            "settings": {
+              "title": "Liquid",
+              "description": "<p><a title=\"https:\/\/shopify.github.io\/liquid\/\" href=\"https:\/\/shopify.github.io\/liquid\/\" target=\"_blank\">https:\/\/shopify.github.io\/liquid\/<\/a><\/p>"
+            }
+          },
+          "f19ebad0-4eff-4026-aed3-d0074dbae823": {
+            "type": "sidebar_text",
+            "settings": {
+              "title": "Liquid Code Examples",
+              "description": "<p><a title=\"https:\/\/shopify.github.io\/liquid-code-examples\/\" href=\"https:\/\/shopify.github.io\/liquid-code-examples\/\" target=\"_blank\">https:\/\/shopify.github.io\/liquid-code-examples\/<\/a><\/p>"
+            }
+          },
+          "5d774bb0-5258-4ea0-9ae9-b030daac8194": {
+            "type": "sidebar_text",
+            "settings": {
+              "title": "Product CSVs and Images",
+              "description": "<p><a title=\"https:\/\/github.com\/levinmejia\/Shopify-Product-CSVs-and-Images\" href=\"https:\/\/github.com\/levinmejia\/Shopify-Product-CSVs-and-Images\" target=\"_blank\">https:\/\/github.com\/levinmejia\/Shopify-Product-CSVs-and-Images<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "970f4fd9-c219-4e2e-8a06-ef9e2119fc61",
+          "b4bd4b96-44ab-4303-97e9-19c80e88a5c2",
+          "f19ebad0-4eff-4026-aed3-d0074dbae823",
+          "5d774bb0-5258-4ea0-9ae9-b030daac8194"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": [

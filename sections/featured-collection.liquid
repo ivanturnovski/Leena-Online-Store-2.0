@@ -5,7 +5,7 @@
 		{% assign image = product.featured_media.preview_image %}
 		<div class="col">
 			<div class="card">
-				<div class="card-image">
+				<div class="card-image m-3">
 					{% if image != blank %}
 					<img class="card-img-top" src="{{ image | img_url }}" alt="{{ product.title }}">
 					{% else %}

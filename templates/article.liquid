@@ -16,8 +16,11 @@
 
 <div class="container my-5">
   <div class="row">
-    <div class="col-12 col-md-8">
 
+    {%- comment -%}
+    This column is for the content and the comments
+    {%- endcomment -%}
+    <div class="col-12 col-md-8">
       <div class="article-content-section my-3">{{ article.content }}</div>
       <div class="article-comment-section my-3">
         {% if blog.comments_enabled? %}
@@ -78,7 +81,14 @@
 
         {% endform %}
       </div>
+    </div> <!-- Column END -->
 
-    </div>
-  </div>
-</div>
+    {%- comment -%}
+    This column is for the Sidebar
+    {%- endcomment -%}
+    <div class="col-12 col-md-4 border-start">
+      {% section 'sidebar-article' %}
+    </div> <!-- Column END -->
+
+  </div> <!-- Row END -->
+</div> <!-- Container END -->
