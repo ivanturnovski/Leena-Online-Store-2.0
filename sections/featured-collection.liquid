@@ -6,15 +6,17 @@
 		<div class="col">
 			<div class="card">
 				<div class="card-image m-3">
-					{% if image != blank %}
-					<img class="card-img-top" src="{{ image | img_url }}" alt="{{ product.title }}">
-					{% else %}
-					{{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
-					{% endif %}
+					<div class="thumbnails">
+						{% if image != blank %}
+						<img class="card-img-top" src="{{ image | img_url: '150x' }}" alt="{{ product.title }}">
+						{% else %}
+						{{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
+						{% endif %}
+					</div>
 				</div>
 				<div class="card-body">
-					<h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
-					<p>{{ product.price | money }}</p>
+					<h5><a href="{{ product.url }}">{{ product.title }}</a></h5>
+					<p class="price">{{ product.price | money }}</p>
 				</div>
 			</div>
 		</div>

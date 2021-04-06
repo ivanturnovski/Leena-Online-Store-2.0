@@ -1,17 +1,33 @@
-{% for collection in collections %}
-  {% unless collection.handle == 'frontpage' %}
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-    <a href="{{ collection.url }}">More {{ collection_title }} &rsaquo;</a>
-    {% for product in collection.products limit:5 %}
-      {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
-      <div>
-        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        {{ product.price | money }}
-        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-        <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">All Collections</h1>
+    {% assign count = 0 %}
+    {% for collection in collections %}
+    {% assign count = count | plus: 1 %}
+
+    <div class="col-12 g-3">
+      <div class="card shadow text-start">
+        <div class="row w-100 px-4 py-2 align-items-center">
+          <div class="col-1 text-center display-5">{{ count }}</div>
+          <div class="col-3">
+            {% if collection.image %}
+            <div class="thumbnails">
+              <img src=" {{ collection.image | img_url: '150x' }}" alt="">
+            </div>
+            {% else %}
+            <div class="thumbnails">{{ 'image' | placeholder_svg_tag: 'card-img-top' }}</div>
+            {% endif %}
+          </div>
+          <div class="col-4">
+            <h4><a href="{{ collection.url }}">{{ collection.title }}</a></h4>
+          </div>
+          <div class="col-4">
+            <span>{{ collection.description | truncatewords: 25, '...' }}</span>
+          </div>
+        </div>
       </div>
+    </div>
+
     {% endfor %}
-  {% endunless %}
-{% endfor %}
+  </div>
+</div>
