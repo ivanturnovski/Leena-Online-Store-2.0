@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <p class="h2 my-5 text-center">
-      Shopping Cart
+      {{ 'general.cart.title' | t }}
     </p>
   </div>
   <div class="mb-5">
@@ -67,8 +67,8 @@
 
 <div class="container">
   <div class="row">
-    <h2 class="text-center">Cart</h2>
-    <p>Card is empty</p>
+    <h2 class="text-center">{{ 'general.cart.title' | t }}</h2>
+    <p>{{ 'general.cart.empty' | t }}</p>
   </div>
 </div>
 {% endif %}

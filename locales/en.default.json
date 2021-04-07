@@ -1,8 +1,12 @@
 {
-  "general": {
-    "404": {
-      "title": "Not found",
-      "subtext_html": "The page you were looking for does not exist"
-    }
-  }
+	"general": {
+		"404": {
+			"title": "Not found1",
+			"subtext_html": "The page you were looking for does not exist"
+		},
+		"cart": {
+			"title": "Cart",
+			"empty": "Cart is empty"
+		}
+	}
 }

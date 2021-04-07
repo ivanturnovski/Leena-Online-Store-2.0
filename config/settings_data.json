@@ -16,7 +16,7 @@
       "1617375081919027c2": {
         "type": "hero",
         "settings": {
-          "image": "shopify:\/\/shop_images\/KAR_20130428-3077_2048x2048_f437e396-6950-450f-9e22-a623ed09cd21.jpg",
+          "image": "shopify:\/\/shop_images\/alfa-lifestyle-lady-sitting_2048x940_78199af9-6ae6-4ab8-b187-820a974805c9.jpg",
           "title": "Hero Heading",
           "description": "<p>Hero Paragraph<\/p>",
           "button_label": "Shop now",
@@ -124,6 +124,33 @@
           "5d774bb0-5258-4ea0-9ae9-b030daac8194"
         ],
         "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "a8586ee1-50c6-4dfa-b77d-7049a800c021": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo2resized200_c9315971-2eaf-4314-afcf-1351168c3fea.png",
+              "title": "Store Information",
+              "description": "<p><strong>Address:<\/strong> 11 Oktomvri 4 Novo Selo, Macedonia<\/p><p><strong>Email:<\/strong> ivanturnovski@gmail.com<\/p><p><strong>Number:<\/strong> +38970617575<\/p>"
+            }
+          },
+          "67c7d64c-0d46-453c-b3b5-4ed881addc6c": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick Links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "a8586ee1-50c6-4dfa-b77d-7049a800c021",
+          "67c7d64c-0d46-453c-b3b5-4ed881addc6c"
+        ],
+        "settings": {
+          "col_num": 2
+        }
       }
     },
     "content_for_index": [
