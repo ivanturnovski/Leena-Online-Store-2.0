@@ -6,8 +6,9 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav me-auto">
-				{% for link in linklists.main-menu.links %}
+			<ul id="main-menu" class="navbar-nav me-auto">
+				{%- comment -%}
+				<!-- {% for link in linklists.main-menu.links %}
 				{% assign child_list_handle = link.title | handleize %}
 				{% if linklists[child_list_handle].links != blank %}
 				<li class="nav-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
@@ -21,7 +22,48 @@
 				{% endfor %}
 				<li class="nav-item">
 					<a class="nav-link" href="/cart">Cart</a>
+				</li> -->
+				{%- endcomment -%}
+
+				{%- for link in linklists.main-menu.links -%}
+				<li class="nav-item{% if link.links != blank %} dropdown dropdown-hover{%- endif -%}">
+					<a class="nav-link{% if link.links != blank %} has-dropdown{%- endif -%}" href="{{ link.url }}">{{
+						link.title }}{%- if link.links != blank -%}
+						<i class="arrow down"></i>{%- endif -%}
+					</a>
+
+					{%- if link.links != blank -%}
+					<ul class="dropdown-menu">
+						<li class="nav-item menu-view-all">
+							<a class="nav-link" href="{{ link.url }}">View All {{ link.title }}</a>
+						</li>
+						{%- for child_link in link.links -%}
+						<li class="nav-item{% if child_link.links != blank %} dropdown dropdown-hover{% endif %}">
+							<a class="nav-link{% if child_link.links != blank %} has-dropdown{%- endif -%}"
+								href="{{ child_link.url }}">{{ child_link.title }}{%- if
+								child_link.links != blank -%}<i class="arrow right"></i>{%- endif -%}</a>
+							{%- if child_link.links != blank -%}
+							<ul class="dropdown-menu dropdown-menu-horizontal">
+								<li class="nav-item menu-view-all">
+									<a class="nav-link" href="{{ child_link.url }}">View All {{ child_link.title }}</a>
+								</li>
+								{%- for grandchild_link in child_link.links -%}
+								<li class="nav-item">
+									<a class="nav-link" href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+								</li>
+								{%- endfor -%}
+							</ul>
+							{%- endif -%}
+
+						</li>
+						{%- endfor -%}
+					</ul>
+					{%- endif -%}
+
 				</li>
+				{%- endfor -%}
+
+
 			</ul>
 			<form action="/search" method="GET" role="search">
 				<input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Search">

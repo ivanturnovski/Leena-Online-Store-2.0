@@ -1,4 +1,4 @@
-<section class="inner-hero-section">
+<div class="inner-hero-section">
 	{% if section.settings.image != blank %}
 	<img src="{{ section.settings.image | img_url: '2048x680', crop: 'top' }}" alt="{{ section.settings.image.alt }}">
 
@@ -18,12 +18,13 @@
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 {% schema %}
 {
 "name": "Hero",
 "class": "hero-section",
+"tag": "section",
 "settings": [
 {
 "type": "image_picker",

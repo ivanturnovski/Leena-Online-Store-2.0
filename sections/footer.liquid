@@ -1,4 +1,4 @@
-<footer class="footer-section bg-light py-5 mt-5">
+<div class="footer-section bg-light py-5 mt-5">
 	<div class="container">
 		<div class="row row-cols-{{ section.settings.col_num }}">
 			{% for block in section.blocks %}
@@ -27,7 +27,7 @@
 			{% endfor %}
 		</div>
 	</div>
-</footer>
+</div>
 
 {{ 'bootstrap.min.js' | asset_url | script_tag }}
 {{ 'application.js' | asset_url | script_tag }}
@@ -37,6 +37,7 @@
 {% schema %}
 {
 "name": "Footer",
+"tag": "footer",
 "settings": [
 {
 "type": "range",

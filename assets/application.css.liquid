@@ -47,3 +47,96 @@ body {
 .product-slider-nav {
 	margin-top: 30px;
 }
+
+/* ======= Main Menu =======  */
+
+@media (min-width: 992px) {
+	.dropdown-hover:hover > .dropdown-menu {
+		display: block;
+	}
+}
+.dropdown-menu {
+	position: absolute;
+	top: 95%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 0;
+	list-style: none;
+	font-size: 14px;
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0;
+	-webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+	box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+	background-clip: padding-box;
+}
+@media (max-width: 991px) {
+	.dropdown-menu {
+		width: 100%;
+		border: none;
+		margin-left: 20px;
+		box-shadow: none;
+		background-color: transparent;
+	}
+}
+@media (max-width: 991px) {
+	.dropdown {
+		position: unset;
+	}
+}
+.dropdown-menu-horizontal {
+	top: -1px;
+	left: 100%;
+}
+@media (min-width: 992px) {
+	#main-menu .menu-view-all {
+		display: none;
+	}
+}
+.arrow {
+	border: solid rgba(0, 0, 0, 0.4);
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 3px;
+	font-size: 14px;
+	color: inherit;
+	margin-left: 5px;
+	position: relative;
+	top: -1px;
+}
+
+.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+@media (max-width: 991px) {
+	.active .right {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		border-color: red;
+	}
+}
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+@media (max-width: 991px) {
+	.down {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	}
+	.active .down {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		border-color: red;
+	}
+}
+
+.nav-link.has-dropdown.active {
+	color: red !important;
+}

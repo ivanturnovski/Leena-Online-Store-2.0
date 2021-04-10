@@ -3,7 +3,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-12">
+		<div class="col-md-6 col-12 g-5">
 			<div class="product-slider-for">
 				{% for image in product.images %}
 				<img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt}}">
@@ -15,7 +15,7 @@
 				{% endfor %}
 			</div>
 		</div>
-		<div class="col-md-6 col-12">
+		<div class="col-md-6 col-12 g-5">
 			<h1>{{ product.title }}</h1>
 			<p>{{ current_product.price | money }}</p>
 			{% form 'product', product, class:"product-form", id:"AddToCartForm" %}
