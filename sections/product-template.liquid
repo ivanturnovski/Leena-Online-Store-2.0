@@ -4,11 +4,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-12">
-			<img src="{{ product_image | img_url: 'large' }}" alt="{{ product_image.alt }}" class="img-fluid"
-				id="ProductMainImage">
-			{% for image in product.images %}
-			<img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt}}">
-			{% endfor %}
+			<div class="product-slider-for">
+				{% for image in product.images %}
+				<img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt}}">
+				{% endfor %}
+			</div>
+			<div class="product-slider-nav">
+				{% for image in product.images %}
+				<img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt}}">
+				{% endfor %}
+			</div>
 		</div>
 		<div class="col-md-6 col-12">
 			<h1>{{ product.title }}</h1>
