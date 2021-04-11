@@ -7,29 +7,12 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul id="main-menu" class="navbar-nav me-auto">
-				{%- comment -%}
-				<!-- {% for link in linklists.main-menu.links %}
-				{% assign child_list_handle = link.title | handleize %}
-				{% if linklists[child_list_handle].links != blank %}
-				<li class="nav-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
-				[{% for childlink in linklists[child_list_handle].links %}
-				<li class="nav-item"><a class="nav-link" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-				</li>
-				{% endfor %}]
-				{% else %}
-				<li class="nav-item"><a class="nav-link" href="{{ link.url }}">{{ link.title }}</a></li>
-				{% endif %}
-				{% endfor %}
-				<li class="nav-item">
-					<a class="nav-link" href="/cart">Cart</a>
-				</li> -->
-				{%- endcomment -%}
+
 
 				{%- for link in linklists.main-menu.links -%}
 				<li class="nav-item{% if link.links != blank %} dropdown dropdown-hover{%- endif -%}">
 					<a class="nav-link{% if link.links != blank %} has-dropdown{%- endif -%}" href="{{ link.url }}">{{
-						link.title }}{%- if link.links != blank -%}
-						<i class="arrow down"></i>{%- endif -%}
+						link.title }}{%- if link.links != blank -%}<i class="arrow down"></i>{%- endif -%}
 					</a>
 
 					{%- if link.links != blank -%}

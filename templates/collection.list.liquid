@@ -1,16 +1,29 @@
-{% paginate collection.products by 2 %}
-<h1>{{ collection.title }}</h1>
-{% for product in collection.products %}
-<div>
-  <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-  {{ product.price | money }}
-  {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-  <a href="{{ product.url | within: collection }}">
-    <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-  </a>
+{% paginate collection.products by 3 %}
+<h1 class="text-center my-3">{{ collection.title }}</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    {% render 'collection-filter' %}
+  </div>
+
+  <div class="row">
+    {% for product in collection.products %}
+    <div class="col-12 g-4">
+      <div class="card shadow">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: 'medium' }}"
+            alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <a href="{{ product.url }}">{{ product.title }}</a>
+        {{ product.price | money }}
+        {% unless product.available %}<br><strong>Sold Out</strong>{% endunless %}
+      </div>
+    </div>
+    {% else %}
+    <p>no matches</p>
+    {% endfor %}
+  </div>
 </div>
-{% else %}
-<p>no matches</p>
-{% endfor %}
-{% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
+
+{% render 'pagination' , paginate: paginate %}
 {% endpaginate %}
