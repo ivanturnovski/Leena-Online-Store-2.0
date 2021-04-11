@@ -7,18 +7,17 @@
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="collapse-header-{{ block.id }}">
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse-{{ block.id }}" aria-expanded="false" aria-controls="{{ block.id }}">
-						{{ block.settings.title }}</button>
+						data-bs-target="#collapse-{{ block.id }}" aria-expanded="false"
+						aria-controls="{{ block.id }}">{{ block.settings.title }}</button>
 				</h2>
-				<div class="accordion-collapse collapse p-3" id="collapse-{{ block.id }}"
+				<div class="accordion-collapse collapse" id="collapse-{{ block.id }}"
 					aria-labelledby="collapse-header-{{ block.id }}" data-bs-parent="#accordionFAQ">
-					<div class="accordion-body">
-						{{ block.settings.answer }}
-					</div>
+					<div class="accordion-body p-3">{{ block.settings.answer | strip_html }}</div>
 				</div>
 			</div>
 			{% endfor %}
 		</div>
+
 	</div>
 
 </div>
