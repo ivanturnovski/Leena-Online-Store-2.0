@@ -1,5 +1,4 @@
 // Sort By Filer On Collections START
-
 if (document.getElementById('sort_by') != null) {
 	var select = document.querySelector('#sort_by');
 	select.addEventListener('change', function (e) {
@@ -8,7 +7,6 @@ if (document.getElementById('sort_by') != null) {
 		window.location = url.href;
 	});
 }
-
 // Sort By Filer On Collections END
 
 // Slick Slider Start
@@ -33,23 +31,15 @@ $(document).ready(function () {
 });
 // Slick Slider End
 
+// Mobile Menu Start
 $(document).ready(function () {
-	console.log(viewportWidth);
-
-	$('body').click(function (event) {
-		console.log(event.target);
-	});
-
 	var vw = $(window).width();
 	var viewportWidth = vw + 17;
-
-	console.log(viewportWidth);
 
 	if (viewportWidth < 992) {
 		var element = $('.has-dropdown');
 		element.click(function (event) {
 			event.preventDefault();
-			console.log('prev def');
 		});
 
 		$('.nav-link').click(function () {
@@ -59,3 +49,30 @@ $(document).ready(function () {
 		});
 	}
 });
+// Mobile Menu End
+
+var selectCountry = document.getElementById('AddressCountryNew');
+
+if (selectCountry != null) {
+	selectCountry.addEventListener('change', function (e) {
+		var provinces = this.options[this.selectedIndex].getAttribute(
+			'data-provinces'
+		);
+		var provinceSelector = document.getElementById('AddressProvinceNew');
+		var provinceArray = JSON.parse(provinces);
+		// console.log(provinceArray);
+
+		if (provinceArray.length < 1) {
+			provinceSelector.setAttribute('disabled', 'disabled');
+		} else {
+			provinceSelector.removeAttribute('disabled');
+		}
+
+		provinceSelector.innerHTML = '';
+		var options = '';
+		for (var i = 0; i < provinceArray.length; i++) {
+			options += `<option value="${provinceArray[i][0]}">${provinceArray[i][0]}</option>`;
+		}
+		provinceSelector.innerHTML = options;
+	});
+}
