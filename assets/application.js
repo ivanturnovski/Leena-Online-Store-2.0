@@ -1,4 +1,4 @@
-// Sort By Filer On Collections START
+// Sort By Filter On Collections START
 if (document.getElementById('sort_by') != null) {
 	var select = document.querySelector('#sort_by');
 	select.addEventListener('change', function (e) {
@@ -7,9 +7,9 @@ if (document.getElementById('sort_by') != null) {
 		window.location = url.href;
 	});
 }
-// Sort By Filer On Collections END
+// Sort By Filter On Collections END
 
-// Slick Slider Start
+// Slick Slider START
 $(document).ready(function () {
 	$('.product-slider-for').slick({
 		slidesToShow: 1,
@@ -29,9 +29,9 @@ $(document).ready(function () {
 		focusOnSelect: true,
 	});
 });
-// Slick Slider End
+// Slick Slider END
 
-// Mobile Menu Start
+// Mobile Menu START
 $(document).ready(function () {
 	var vw = $(window).width();
 	var viewportWidth = vw + 17;
@@ -49,8 +49,9 @@ $(document).ready(function () {
 		});
 	}
 });
-// Mobile Menu End
+// Mobile Menu END
 
+// Address Page Fetch Province START
 var selectCountry = document.getElementById('AddressCountryNew');
 
 if (selectCountry != null) {
@@ -76,3 +77,4 @@ if (selectCountry != null) {
 		provinceSelector.innerHTML = options;
 	});
 }
+// Address Page Fetch Province END

@@ -8,7 +8,7 @@
 </div>
 
 <div class="container my-5">
-  {% paginate blog.articles by 4 %}
+  {% paginate blog.articles by 6 %}
   <div class="row row-cols-1 row cols-md-2 row-cols-lg-3 justify-content-center g-3 py-5">
     {% for article in blog.articles %}
     <div class="col">
@@ -24,7 +24,7 @@
           date: format: 'long' }}
           {%- if article.excerpt.size > 0 -%}
           <p class="mb-0">{{ article.excerpt | | truncate: 30, '...'}}</p>
-          {% else %}
+          {%- else -%}
           <p class="mb-0">&nbsp;</p>
           {%- endif -%}
         </div>

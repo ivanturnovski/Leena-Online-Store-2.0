@@ -15,9 +15,10 @@
       <div class="card">
         <div class="thumbnails m-3">
           {% if image != blank %}
-          <img class="card-img-top" src="{{ image | img_url: '150x' }}" alt="{{ product.title }}">
+          <a href="{{ product.url }}"><img class="card-img-top" src="{{ image | img_url: '150x' }}"
+              alt="{{ product.title }}"></a>
           {% else %}
-          {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
+          <a href="{{ product.url }}">{{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}</a>
           {% endif %}
         </div>
         <div class="card-body">
