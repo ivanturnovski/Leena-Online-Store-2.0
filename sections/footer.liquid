@@ -5,34 +5,28 @@
 			{% assign item = block.settings %}
 			{% if block.type == 'link_list' %}
 			<div class="col">
-				<div class="">
-					<h5>{{ item.title }}</h5>
-					{% assign footer_linklist = item.menu %}
-					<ul class="list-unstyled text-small">
-						{% for link in linklists[footer_linklist].links %}
-						<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
+				<h5>{{ item.title }}</h5>
+				{% assign footer_linklist = item.menu %}
+				<ul class="list-unstyled text-small">
+					{% for link in linklists[footer_linklist].links %}
+					<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+					{% endfor %}
+				</ul>
 			</div>
 			{% elsif block.type == "text" %}
 			<div class="col">
-				<div class="">
-					<a href="/"><img src="{{ item.logo | img_url: '200x200' }}" class="mb-4"></a>
-					<h5>{{ item.title }}</h5>
-					<p>{{ item.description }}</p>
-				</div>
+				<a href="/"><img src="{{ item.logo | img_url: '200x200' }}" class="mb-4"></a>
+				<h5>{{ item.title }}</h5>
+				<p>{{ item.description }}</p>
 			</div>
 			{% endif %}
 			{% endfor %}
 		</div>
 	</div>
 </div>
-
 {{ 'bootstrap.min.js' | asset_url | script_tag }}
 {{ 'application.js' | asset_url | script_tag }}
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
 
 {% schema %}
 {

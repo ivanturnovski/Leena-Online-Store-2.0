@@ -1,0 +1,19 @@
+<div class="card shadow">
+	<div class="thumbnails m-3">
+		{% if image != blank %}
+		<a href="{{ product.url }}"><img class="card-img-top" src="{{ image | img_url: '150x' }}"
+				alt="{{ product.title }}"></a>
+		{% else %}
+		<a href="{{ product.url }}">{{ 'image' | placeholder_svg_tag: 'card-img-top' }}</a>
+		{% endif %}
+	</div>
+	<div class="card-body">
+		<h5><a href="{{ product.url }}">{{ product.title }}</a></h5>
+		<p class="price">{{ product.price | money }}</p>
+		{% if product.available %}
+		<p><span class="badge bg-success">In Stock</span></p>
+		{% else %}
+		<p><span class="badge bg-danger">Sold Out</span></p>
+		{% endif %}
+	</div>
+</div>

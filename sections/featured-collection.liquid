@@ -4,20 +4,7 @@
 		{% for product in collections[section.settings.featured_collection].products %}
 		{% assign image = product.featured_media.preview_image %}
 		<div class="col g-4">
-			<div class="card">
-				<div class="thumbnails m-3">
-					{% if image != blank %}
-					<a href="{{ product.url }}"><img class="card-img-top" src="{{ image | img_url: '150x' }}"
-							alt="{{ product.title }}"></a>
-					{% else %}
-					<a href="{{ product.url }}">{{ 'image' | placeholder_svg_tag: 'card-img-top' }}</a>
-					{% endif %}
-				</div>
-				<div class="card-body">
-					<h5><a href="{{ product.url }}">{{ product.title }}</a></h5>
-					<p class="price">{{ product.price | money }}</p>
-				</div>
-			</div>
+			{% render 'product-card', product: product, image: image %}
 		</div>
 		{% endfor %}
 	</div>
