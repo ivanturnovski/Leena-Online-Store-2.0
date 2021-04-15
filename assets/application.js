@@ -78,3 +78,12 @@ if (selectCountry != null) {
 	});
 }
 // Address Page Fetch Province END
+
+var forgotPassword = document.getElementById('forgotPassword');
+var forgotPasswordForm = document.getElementById('forgotPasswordForm');
+
+if (forgotPassword != null) {
+	forgotPassword.addEventListener('click', function (e) {
+		forgotPasswordForm.classList.toggle('d-none');
+	});
+}

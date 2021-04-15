@@ -1,8 +1,8 @@
 <!-- /templates/customers/account.liquid -->
 <div class="container">
-  <h1 class="text-center my-3">
-    Account
-  </h1>
+  <div class="row">
+    <h2 class="my-5 text-center">Welcome to your Account {{ customer.name }}</h2>
+  </div>
   <div class="row">
     <div class="col-12 col-md-4">
       <h6>Account Details</h6>
@@ -17,7 +17,7 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Order #</th>
+              <th>Orders# <span class="text-white badge bg-purple">{{customer.orders_count }}</span></th>
               <th>Payment Status</th>
               <th>Fulfillment Status</th>
               <th>Order Date</th>
@@ -33,7 +33,8 @@
               <td>
                 <a href="{{ order.customer_url }}">{{ order.name }}</a>
               </td>
-              <td><span class="badge {{ financial_status}}">{{ order.financial_status_label }}</span>
+              <td><span class="badge {{ financial_status}}">{{ order.financial_status_label
+                  }}</span>
               </td>
               <td><span class="badge {{ fulfillment_status }}">{{ order.fulfillment_status_label }}</span></td>
               <td>{{ order.created_at | time_tag: format: 'date' }}</td>
@@ -43,6 +44,13 @@
             </tr>
             {%- endfor -%}
           </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6"><strong>Customer Total Spent</strong></td>
+              <td><strong>{{ customer.total_spent | money }}</strong></td>
+            </tr>
+
+          </tfoot>
         </table>
         {%- endif -%}
       </div>

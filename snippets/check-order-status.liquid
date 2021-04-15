@@ -4,7 +4,7 @@ bg-primary
 {%- elsif fulfstat == 'unfulfilled'-%}
 bg-danger
 {%- else -%}
-bg-dark
+bg-secondary
 {%- endif -%}
 {%- endcapture -%}
 
@@ -13,6 +13,8 @@ bg-dark
 bg-success
 {%- elsif finstat == 'partially_refunded'-%}
 bg-warning
+{%- elsif finstat == 'refunded'-%}
+bg-light-green
 {%- else -%}
 bg-secondary
 {%- endif -%}
