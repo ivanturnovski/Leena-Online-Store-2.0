@@ -12,7 +12,7 @@
   <h1 class="lead">Order {{ order.name }}</h1>
 
   <div class="row my-3">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 d-flex flex-column">
       <div class="card">
         <div class="card-header w-100">Billing Information</div>
         <div class="card-body">
@@ -20,27 +20,35 @@
           {{ order.billing_address | format_address }}
         </div>
       </div>
-
+      <div class="card my-3">
+        <div class="card-header w-100">Shipping Information</div>
+        <div class="card-body">
+          <p>Fulfillment Status: <span class="badge {{ fulfillment_status }}">{{ order.fulfillment_status_label
+              }}</span></p>
+          {{ order.shipping_address | format_address }}
+        </div>
+      </div>
     </div>
+
     <div class="col-12 col-md-8">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <td><strong>Product</strong></td>
-            <td><strong>SKU</strong></td>
-            <td><strong>Price</strong></td>
-            <td><strong>Quantity</strong></td>
-            <td><strong>Total</strong></td>
+            <th>Product</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
           </tr>
         </thead>
         <tbody>
           {% for line_item in order.line_items %}
           <tr>
-            <td>{{ line_item.title | link_to: line_item.product.url }}</td>
-            <td>{{ line_item.sku }}</td>
-            <td>{{ line_item.original_price | money}}</td>
-            <td>{{ line_item.quantity }}</td>
-            <td>{{ line_item.line_price | money }}</td>
+            <td data-th="Product">{{ line_item.title | link_to: line_item.product.url }}</td>
+            <td data-th="SKU">{{ line_item.sku }}</td>
+            <td data-th="Price">{{ line_item.original_price | money}}</td>
+            <td data-th="Quantity">{{ line_item.quantity }}</td>
+            <td data-th="Total">{{ line_item.line_price | money }}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -59,22 +67,6 @@
           </tr>
         </tfoot>
       </table>
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col-12 col-md-4">
-      <div class="card">
-        <div class="card-header w-100">Shipping Information</div>
-        <div class="card-body">
-          <p>Fulfillment Status: <span class="badge {{ fulfillment_status }}">{{ order.fulfillment_status_label
-              }}</span></p>
-          {{ order.shipping_address | format_address }}
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-8">
-
     </div>
   </div>
 </div>

@@ -4,14 +4,14 @@
     <h2 class="my-5 text-center">Welcome to your Account {{ customer.name }}</h2>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 g-3">
       <h6>Account Details</h6>
       {{ customer.default_address | format_address }}
       <a href="{{ routes.account_addresses_url }}" class="btn btn-light">View Addresses <span
           class="badge bg-success">{{
           customer.addresses_count }}</span></a>
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-8 g-3">
       <div class="customer_orders">
         {%- if customer.orders.size > 0 -%}
         <table class="table table-bordered">
@@ -30,17 +30,18 @@
             {%- for order in customer.orders -%}
             {% include 'check-order-status', fulfstat: order.fulfillment_status, finstat: order.financial_status %}
             <tr>
-              <td>
+              <td data-th="Orders#">
                 <a href="{{ order.customer_url }}">{{ order.name }}</a>
               </td>
-              <td><span class="badge {{ financial_status}}">{{ order.financial_status_label
+              <td data-th="Payment Status"><span class="badge {{ financial_status}}">{{ order.financial_status_label
                   }}</span>
               </td>
-              <td><span class="badge {{ fulfillment_status }}">{{ order.fulfillment_status_label }}</span></td>
-              <td>{{ order.created_at | time_tag: format: 'date' }}</td>
-              <td>{{ order.subtotal_price | money }}</td>
-              <td>{{ order.shipping_price | money }}</td>
-              <td>{{ order.total_price | money }}</td>
+              <td data-th="Fulfillment Status"><span class="badge {{ fulfillment_status }}">{{
+                  order.fulfillment_status_label }}</span></td>
+              <td data-th="Order Date">{{ order.created_at | time_tag: format: 'date' }}</td>
+              <td data-th="Order Price">{{ order.subtotal_price | money }}</td>
+              <td data-th="Shipping Price">{{ order.shipping_price | money }}</td>
+              <td data-th="Total Price">{{ order.total_price | money }}</td>
             </tr>
             {%- endfor -%}
           </tbody>
