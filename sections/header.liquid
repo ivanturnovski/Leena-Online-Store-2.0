@@ -65,5 +65,15 @@
 				<input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Search">
 			</form>
 		</div>
+
+		{% form 'localization', id: "localization_form_tag", class: "dropup" %}
+		<div class="localeBtn">{{ 'globe.png' | asset_img_url: '25x' | img_tag }}</div>
+		<div class="dropup-content">
+			{% for locale in shop.published_locales %}
+			<a id="localeItem" class="text-decoration-none" lang="{{ locale.iso_code }}">{{ locale.iso_code }}</a>
+			{% endfor %}
+		</div>
+		<input id="localeCode" type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
+		{% endform %}
 	</div>
 </nav>

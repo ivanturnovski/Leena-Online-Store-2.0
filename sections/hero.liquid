@@ -1,6 +1,6 @@
 <div class="inner-hero-section">
 	{% if section.settings.image != blank %}
-	<img src="{{ section.settings.image | img_url: '2048x680', crop: 'top' }}" alt="{{ section.settings.image.alt }}">
+	<img src="{{ section.settings.image | img_url: '2048x680' }}" alt="{{ section.settings.image.alt }}">
 
 	{% else %}
 	{% capture current %}{% cycle 1,2%}{% endcapture %}

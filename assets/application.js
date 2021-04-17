@@ -79,11 +79,26 @@ if (selectCountry != null) {
 }
 // Address Page Fetch Province END
 
+// Forgot Password Popup
 var forgotPassword = document.getElementById('forgotPassword');
 var forgotPasswordForm = document.getElementById('forgotPasswordForm');
 
 if (forgotPassword != null) {
 	forgotPassword.addEventListener('click', function (e) {
-		forgotPasswordForm.classList.toggle('d-none');
+		setTimeout(function () {
+			forgotPasswordForm.classList.toggle('is-visible');
+		}, 20);
+	});
+}
+// Forgot Password Popup
+
+var localeItems = document.querySelectorAll('#localeItem');
+
+if (localeItems.length > 0) {
+	localeItems.forEach((item) => {
+		item.addEventListener('click', (event) => {
+			document.getElementById('localeCode').value = item.getAttribute('lang');
+			document.getElementById('localization_form_tag').submit();
+		});
 	});
 }
