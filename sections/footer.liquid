@@ -23,7 +23,16 @@
 			{% endfor %}
 		</div>
 	</div>
+
+	{% if section.settings.enable_payment_types == true %}
+	<div class="container text-center">
+		{% for payment_type in shop.enabled_payment_types %}
+		<img src="{{ payment_type | payment_type_img_url }}" alt="">
+		{% endfor %}
+	</div>
+	{% endif %}
 </div>
+
 {{ 'bootstrap.min.js' | asset_url | script_tag }}
 {{ 'application.js' | asset_url | script_tag }}
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -40,6 +49,16 @@
 "min": 2,
 "max": 4,
 "label": "Number of columns"
+},
+{
+"type": "header",
+"content": "Payment"
+},
+{
+"type": "checkbox",
+"id": "enable_payment_types",
+"label": "Enable Payment Type Icons",
+"default": true
 }
 ],
 "max_blocks": 4,
