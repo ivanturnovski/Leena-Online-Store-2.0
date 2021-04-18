@@ -1,21 +1,21 @@
 {% if cart.item_count > 0 %}
 <div class="container">
   <div class="row">
-    <p class="h2 my-5 text-center">
+    <p class="h2 my-3 text-center">
       {{ 'general.cart.title' | t }}
     </p>
   </div>
   <div class="mb-5">
     <form action="/cart" method="POST" novalidate class="row">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-lg-8 g-3">
         <div class="card shadow">
           <div class="card-body">
             <table class="table table-borderless">
               <thead>
-                <th colspan="2">Product</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Total</th>
+                <th colspan="2">{{ 'general.cart.product' | t }}</th>
+                <th>{{ 'general.cart.price' | t }}</th>
+                <th>{{ 'general.cart.quantity' | t }}</th>
+                <th>{{ 'general.cart.total' | t }}</th>
               </thead>
               <tbody>
                 {% for item in cart.items %}
@@ -28,7 +28,8 @@
                   <td>
                     <a href="{{ item.url }}">{{ item.product.title }}</a>
                     <p class="small">{{ item.variant.title }}</p>
-                    <a class="btn btn-danger" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
+                    <a class="btn btn-danger" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{
+                      'general.cart.remove' | t }}</a>
                   </td>
                   <td>{{ item.price | money }}</td>
                   <td>
@@ -48,14 +49,14 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-lg-4 g-3">
         <div class="card shadow">
           <div class="card-body">
-            <p class="h3">The total amount is:</p>
+            <p class="h3">{{ 'general.cart.total_amount' | t }}:</p>
             <p>{{ cart.total_price | money }}</p>
             <div class="d-grid gap-2">
-              <button class="btn btn-primary" type="submit" name="update">Update</button>
-              <button class="btn btn-primary" type="submit" name="checkout">Checkout</button>
+              <button class="btn btn-primary" type="submit" name="update">{{ 'general.cart.update' | t }}</button>
+              <button class="btn btn-primary" type="submit" name="checkout">{{ 'general.cart.checkout' | t }}</button>
             </div>
           </div>
         </div>

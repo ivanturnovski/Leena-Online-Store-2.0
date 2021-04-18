@@ -6,7 +6,15 @@
 		},
 		"cart": {
 			"title": "Cart",
-			"empty": "Cart is empty"
+			"empty": "Cart is empty",
+			"product": "Product",
+			"price": "Price",
+			"quantity": "Quantity",
+			"total": "Total",
+			"total_amount": "The total amount is",
+			"update": "Update",
+			"checkout": "Checkout",
+			"remove": "Remove"
 		}
 	}
 }
