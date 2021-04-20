@@ -20,8 +20,8 @@
         "type": "hero",
         "settings": {
           "image": "shopify:\/\/shop_images\/hero.jpg",
-          "title": "Welcome to my Theme",
-          "description": "<p>This is fully customizable theme made from scratch<\/p>",
+          "title": "Welcome to my theme",
+          "description": "<p>This is fully customizable and responsive theme made from scratch<\/p>",
           "button_label": "Learn now",
           "button_link": "\/blogs\/development"
         }

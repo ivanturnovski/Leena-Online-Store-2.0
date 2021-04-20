@@ -16,5 +16,15 @@
 			"checkout": "Чекирај",
 			"remove": "Отстрани"
 		}
+	},
+	"shopify": {
+		"checkout": {
+			"general": {
+				"page_title": "Чекирај"
+			},
+			"payment": {
+				"title": "Плаќање"
+			}
+		}
 	}
 }

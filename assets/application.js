@@ -92,8 +92,8 @@ if (forgotPassword != null) {
 }
 // Forgot Password Popup
 
+// Language Selector
 var localeItems = document.querySelectorAll('#localeItem');
-
 if (localeItems.length > 0) {
 	localeItems.forEach((item) => {
 		item.addEventListener('click', (event) => {
@@ -102,3 +102,4 @@ if (localeItems.length > 0) {
 		});
 	});
 }
+// Language Selector
