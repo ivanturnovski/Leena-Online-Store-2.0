@@ -1,24 +1,22 @@
 <div class="container py-4">
-	<h2 class="text-center my-3">
-		{{ section.settings.title }}
-	</h2>
-	{% assign sm = section.settings.cols_sm %}
-	{% assign md = section.settings.cols_md %}
-	{% assign lg = section.settings.cols_lg %}
+	<h2 class="text-center my-3">{{ section.settings.title }}</h2>
+	{%- assign sm = section.settings.cols_sm -%}
+	{%- assign md = section.settings.cols_md -%}
+	{%- assign lg = section.settings.cols_lg -%}
 	<div class="row justify-content-center row-cols-1 row-cols-sm-{{ sm }} row-cols-md-{{ md }} row-cols-lg-{{ lg }}">
-		{% for block in section.blocks %}
-		{% assign item = block.settings %}
-		{% if block.type == "image" %}
+		{%- for block in section.blocks -%}
+		{%- assign item = block.settings -%}
+		{%- if block.type == "image" -%}
 		<div class="col g-4">
 			<img src="{{ item.image | img_url: '500x' }}" alt="{{ item.title }}">
 		</div>
-		{% endif %}
-		{% if block.type == "video" %}
+		{%- endif -%}
+		{%- if block.type == "video" -%}
 		<div class="col g-4">
-			<iframe src="//www.youtube.com/embed/{{ item.video_url.id }}"> </iframe>
+			<iframe src="//www.youtube.com/embed/{{ item.video_url.id }}"></iframe>
 		</div>
-		{% endif %}
-		{% endfor %}
+		{%- endif -%}
+		{%- endfor -%}
 	</div>
 </div>
 {% schema %}

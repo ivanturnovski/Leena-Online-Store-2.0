@@ -1,12 +1,12 @@
 <div class="container py-4">
 	<h2 class="text-center my-3">{{ section.settings.title }}</h2>
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
-		{% for product in collections[section.settings.featured_collection].products %}
-		{% assign image = product.featured_media.preview_image %}
+		{%- for product in collections[section.settings.featured_collection].products -%}
+		{%- assign image = product.featured_media.preview_image -%}
 		<div class="col g-4">
-			{% render 'product-card', product: product, image: image %}
+			{%- render 'product-card', product: product, image: image -%}
 		</div>
-		{% endfor %}
+		{%- endfor -%}
 	</div>
 </div>
 {% schema %}

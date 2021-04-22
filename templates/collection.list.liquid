@@ -1,22 +1,19 @@
 {% paginate collection.products by 6 %}
 <h1 class="text-center my-3">{{ collection.title }}</h1>
-
 <div class="container">
   <div class="row justify-content-center">
-    {% render 'collection-filter' %}
+    {%- render 'collection-filter' -%}
   </div>
-
   <div class="row">
-    {% for product in collection.products %}
-    {% assign image = product.featured_media.preview_image %}
+    {%- for product in collection.products -%}
+    {%- assign image = product.featured_media.preview_image -%}
     <div class="col-12 g-4">
-      {% render 'product-card', product: product, image: image %}
+      {%- render 'product-card', product: product, image: image -%}
     </div>
-    {% else %}
+    {%- else -%}
     <p>no matches</p>
-    {% endfor %}
+    {%- endfor -%}
   </div>
 </div>
-
-{% render 'pagination' , paginate: paginate %}
-{% endpaginate %}
+{%- render 'pagination' , paginate: paginate -%}
+{%- endpaginate -%}

@@ -6,7 +6,7 @@
 
 {% include 'check-order-status' %}
 {%- endcomment -%}
-{% include 'check-order-status', fulfstat: order.fulfillment_status, finstat: order.financial_status %}
+{%- include 'check-order-status', fulfstat: order.fulfillment_status, finstat: order.financial_status -%}
 
 <div class="container my-5">
   <h1 class="lead">Order {{ order.name }}</h1>
@@ -42,7 +42,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for line_item in order.line_items %}
+          {%- for line_item in order.line_items -%}
           <tr>
             <td data-th="Product">{{ line_item.title | link_to: line_item.product.url }}</td>
             <td data-th="SKU">{{ line_item.sku }}</td>
@@ -50,7 +50,7 @@
             <td data-th="Quantity">{{ line_item.quantity }}</td>
             <td data-th="Total">{{ line_item.line_price | money }}</td>
           </tr>
-          {% endfor %}
+          {%- endfor -%}
         </tbody>
         <tfoot>
           <tr>

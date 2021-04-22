@@ -43,37 +43,37 @@
 				{%- endfor -%}
 			</ul>
 			<ul class="navbar-nav">
-				{% if shop.customer_accounts_enabled %}
-				{% if customer %}
+				{%- if shop.customer_accounts_enabled -%}
+				{%- if customer -%}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ routes.account_url }}">Account</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ routes.account_logout_url }}">Logout</a>
 				</li>
-				{% else %}
+				{%- else -%}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ routes.account_login_url }}">Login</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ routes.account_register_url }}">Register</a>
 				</li>
-				{% endif %}
-				{% endif %}
+				{%- endif -%}
+				{%- endif -%}
 			</ul>
 			<form action="/search" method="GET" role="search">
 				<input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Search">
 			</form>
 		</div>
 
-		{% form 'localization', id: "localization_form_tag", class: "dropup" %}
+		{%- form 'localization', id: "localization_form_tag", class: "dropup" -%}
 		<div class="localeBtn">{{ 'globe.png' | asset_img_url: '25x' | img_tag }}</div>
 		<div class="dropup-content">
-			{% for locale in shop.published_locales %}
+			{%- for locale in shop.published_locales -%}
 			<a id="localeItem" class="text-decoration-none" lang="{{ locale.iso_code }}">{{ locale.iso_code }}</a>
-			{% endfor %}
+			{%- endfor -%}
 		</div>
 		<input id="localeCode" type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
-		{% endform %}
+		{%- endform -%}
 	</div>
 </nav>

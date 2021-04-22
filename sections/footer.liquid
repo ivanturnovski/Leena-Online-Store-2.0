@@ -1,36 +1,36 @@
 <div class="footer-section bg-light py-5 mt-5">
 	<div class="container">
 		<div class="row row-cols-1 row-cols-md-{{ section.settings.col_num }}">
-			{% for block in section.blocks %}
-			{% assign item = block.settings %}
-			{% if block.type == 'link_list' %}
+			{%- for block in section.blocks -%}
+			{%- assign item = block.settings -%}
+			{%- if block.type == 'link_list' -%}
 			<div class="col py-3">
 				<h5>{{ item.title }}</h5>
-				{% assign footer_linklist = item.menu %}
+				{%- assign footer_linklist = item.menu -%}
 				<ul class="list-unstyled text-small">
-					{% for link in linklists[footer_linklist].links %}
+					{%- for link in linklists[footer_linklist].links -%}
 					<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-					{% endfor %}
+					{%- endfor -%}
 				</ul>
 			</div>
-			{% elsif block.type == "text" %}
+			{%- elsif block.type == "text" -%}
 			<div class="col py-3">
 				<a href="/"><img src="{{ item.logo | img_url: '200x200' }}" class="mb-4"></a>
 				<h5>{{ item.title }}</h5>
 				<p>{{ item.description }}</p>
 			</div>
-			{% endif %}
-			{% endfor %}
+			{%- endif -%}
+			{%- endfor -%}
 		</div>
 	</div>
 
-	{% if section.settings.enable_payment_types == true %}
+	{%- if section.settings.enable_payment_types == true -%}
 	<div class="container text-center">
-		{% for payment_type in shop.enabled_payment_types %}
+		{%- for payment_type in shop.enabled_payment_types -%}
 		<img src="{{ payment_type | payment_type_img_url }}" alt="">
-		{% endfor %}
+		{%- endfor -%}
 	</div>
-	{% endif %}
+	{%- endif -%}
 </div>
 
 {{ 'bootstrap.min.js' | asset_url | script_tag }}

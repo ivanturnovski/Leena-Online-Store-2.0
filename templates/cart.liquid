@@ -1,4 +1,4 @@
-{% if cart.item_count > 0 %}
+{%- if cart.item_count > 0 -%}
 <div class="container">
   <div class="row">
     <p class="h2 my-3 text-center">
@@ -18,7 +18,7 @@
                 <th>{{ 'general.cart.total' | t }}</th>
               </thead>
               <tbody>
-                {% for item in cart.items %}
+                {%- for item in cart.items -%}
                 <tr>
                   <td>
                     <a href="{{ item.url | within: collections.all }}">
@@ -37,13 +37,13 @@
                       min="0">
                   </td>
                   <td>
-                    {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif
-                    %}
+                    {%- if item.original_line_price != item.line_price -%}{{ item.original_line_price | money }}{%-
+                    endif -%}
                     {{ item.line_price | money }}
-                    {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+                    {%- for discount in item.discounts -%}{{ discount.title }}{%- endfor -%}
                   </td>
                 </tr>
-                {% endfor %}
+                {%- endfor -%}
               </tbody>
             </table>
           </div>
@@ -64,7 +64,7 @@
     </form>
   </div>
 </div>
-{% else %}
+{%- else -%}
 
 <div class="container">
   <div class="row">
@@ -72,4 +72,4 @@
     <p>{{ 'general.cart.empty' | t }}</p>
   </div>
 </div>
-{% endif %}
+{%- endif -%}

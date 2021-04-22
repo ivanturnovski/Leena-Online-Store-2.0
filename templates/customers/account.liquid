@@ -17,7 +17,7 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Orders# <span class="text-white badge bg-purple">{{customer.orders_count }}</span></th>
+              <th>Orders# <span class="text-white badge bg-purple">{{ customer.orders_count }}</span></th>
               <th>Payment Status</th>
               <th>Fulfillment Status</th>
               <th>Order Date</th>
@@ -28,7 +28,7 @@
           </thead>
           <tbody>
             {%- for order in customer.orders -%}
-            {% include 'check-order-status', fulfstat: order.fulfillment_status, finstat: order.financial_status %}
+            {%- include 'check-order-status', fulfstat: order.fulfillment_status, finstat: order.financial_status -%}
             <tr>
               <td data-th="Orders#">
                 <a href="{{ order.customer_url }}">{{ order.name }}</a>
@@ -50,7 +50,6 @@
               <td colspan="6"><strong>Customer Total Spent</strong></td>
               <td><strong>{{ customer.total_spent | money }}</strong></td>
             </tr>
-
           </tfoot>
         </table>
         {%- endif -%}
