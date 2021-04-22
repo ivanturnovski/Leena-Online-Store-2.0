@@ -1,6 +1,6 @@
 {
   "current": {
-    "navbar_color": "#e220d6",
+    "navbar_color": "#d5d5d5",
     "header_text_font": "assistant_n4",
     "body_text_font": "catamaran_n4",
     "body_font_size": 16,
@@ -126,7 +126,9 @@
           "f19ebad0-4eff-4026-aed3-d0074dbae823",
           "5d774bb0-5258-4ea0-9ae9-b030daac8194"
         ],
-        "settings": {}
+        "settings": {
+          "show_sidebar": "yes"
+        }
       },
       "footer": {
         "type": "footer",
@@ -154,6 +156,12 @@
         "settings": {
           "col_num": 2,
           "enable_payment_types": true
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "products": 12
         }
       }
     },

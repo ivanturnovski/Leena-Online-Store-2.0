@@ -1,3 +1,4 @@
+{%- if section.settings.show_sidebar == 'yes' -%}
 <div class="article-sidebar-section text-center px-5">
 	{% for block in section.blocks %}
 	{% assign item = block.settings %}
@@ -18,11 +19,23 @@
 
 	{% endfor %}
 </div>
-
+{%- endif -%}
 
 {% schema %}
 {
 "name": "Article Sidebar",
+"settings": [
+{
+"id": "show_sidebar",
+"type": "radio",
+"label": "Show sidebar?",
+"options": [
+{ "value": "yes", "label": "Show" },
+{ "value": "no", "label": "Don't Show" }
+],
+"default": "yes"
+}
+],
 "max_blocks": 4,
 "blocks": [
 {
@@ -39,7 +52,6 @@
 "type": "image_picker",
 "id": "image",
 "label": "Image"
-
 },
 {
 "type": "url",

@@ -35,3 +35,25 @@
 ]
 }
 {% endschema %}
+
+{%- comment -%}
+Multiple ways GLOBAL OBJECT-->
+
+#1
+{%assign collection = collections['shirts']%}
+for product in collection.products
+
+#2
+for product in collections['shirts'].products
+
+#3
+for product in collections.shirts.products
+
+
+#4
+{% assign collection = collections[section.settings.featured_collection] %}
+for product in collection.products
+
+{{ section.settings.featured_collection }} will output featured (the handle)
+{{ collection }} will output CollectionDrop (tells which kind of object is)
+{%- endcomment -%}
