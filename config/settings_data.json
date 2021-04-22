@@ -163,11 +163,65 @@
         "settings": {
           "products": 12
         }
+      },
+      "1619098944c88bd80b": {
+        "type": "gallery",
+        "blocks": {
+          "8c6688c8-6661-4f80-b9c1-6e15c6f7e994": {
+            "type": "image",
+            "settings": {
+              "title": "Man on Bike",
+              "image": "shopify:\/\/shop_images\/KAR_20130707-4298_2048x2048_023ca988-345a-4c59-973f-d2976ec2d518.jpg"
+            }
+          },
+          "688e4539-066d-4e07-b441-4852ec378ade": {
+            "type": "image",
+            "settings": {
+              "title": "Yellow bike",
+              "image": "shopify:\/\/shop_images\/KAR_20130707-4329_2048x2048_1f934155-9f2c-4386-8612-42919e2e3828.jpg"
+            }
+          },
+          "991053fd-9f57-46f2-82cf-4646a5494260": {
+            "type": "image",
+            "settings": {
+              "title": "Blue bike",
+              "image": "shopify:\/\/shop_images\/KAR_20130428-3038_2048x2048_d0b0bb0c-e9d4-4262-b452-e519b08e0acf.jpg"
+            }
+          },
+          "d6bcb11a-d161-46ff-85fb-cb2ad5e92f26": {
+            "type": "image",
+            "settings": {
+              "title": "Man and Bike",
+              "image": "shopify:\/\/shop_images\/KAR_20130707-4295_2048x2048_fa2f4d93-440a-4a59-b59b-4f76a984e970.jpg"
+            }
+          },
+          "08a0ee60-4f08-47b8-a406-88d1118dd2c3": {
+            "type": "video",
+            "settings": {
+              "title": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=h6t5eDe5gUE"
+            }
+          }
+        },
+        "block_order": [
+          "8c6688c8-6661-4f80-b9c1-6e15c6f7e994",
+          "688e4539-066d-4e07-b441-4852ec378ade",
+          "991053fd-9f57-46f2-82cf-4646a5494260",
+          "d6bcb11a-d161-46ff-85fb-cb2ad5e92f26",
+          "08a0ee60-4f08-47b8-a406-88d1118dd2c3"
+        ],
+        "settings": {
+          "title": "Gallery",
+          "cols_sm": 2,
+          "cols_md": 3,
+          "cols_lg": 5
+        }
       }
     },
     "content_for_index": [
       "1617375081919027c2",
-      "1617375064ce83f223"
+      "1617375064ce83f223",
+      "1619098944c88bd80b"
     ]
   },
   "presets": {
