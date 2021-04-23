@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
-<body>
+<body class="{{ template | handleize }}-template">
   {% section 'header' %}
   <main role="main">
     {{ content_for_layout }}

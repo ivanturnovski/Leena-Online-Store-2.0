@@ -3,7 +3,8 @@
 		<div class="row row-cols-1 row-cols-md-{{ section.settings.col_num }}">
 			{%- for block in section.blocks -%}
 			{%- assign item = block.settings -%}
-			{%- if block.type == 'link_list' -%}
+			{% case block.type %}
+			{% when 'link_list' %}
 			<div class="col py-3">
 				<h5>{{ item.title }}</h5>
 				{%- assign footer_linklist = item.menu -%}
@@ -13,13 +14,13 @@
 					{%- endfor -%}
 				</ul>
 			</div>
-			{%- elsif block.type == "text" -%}
+			{% when 'text' %}
 			<div class="col py-3">
 				<a href="/"><img src="{{ item.logo | img_url: '200x200' }}" class="mb-4"></a>
 				<h5>{{ item.title }}</h5>
-				<p>{{ item.description }}</p>
+				{{ item.description }}
 			</div>
-			{%- endif -%}
+			{% endcase %}
 			{%- endfor -%}
 		</div>
 	</div>
