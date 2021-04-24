@@ -10,19 +10,20 @@
     {%- for article in blog.articles -%}
     <div class="col">
       <div class="card shadow">
-        {%- if article.image.src != null -%}
-        <a class="p-3" href="{{ article.url }}"><img src="{{ article.image.src | img_url: 'medium' }}"
-            alt="{{ article.image.alt }}"></a>
-        {%- else -%}
-        <a class="p-3" href="{{ article.url }}">{{ 'image' | placeholder_svg_tag: 'card-img-top' }}</a>
-        {%- endif -%}
+        <div class="thumbnails m-3">
+          {%- if article.image.src != null -%}
+          <a href="{{ article.url }}"><img class="img-fluid" src="{{ article.image.src | img_url: '150x150' }}"
+              alt="{{ article.image.alt }}"></a>
+          {%- else -%}
+          <a href="{{ article.url }}">{{ 'image' | placeholder_svg_tag: 'card-img-top' }}</a>
+          {%- endif -%}
+        </div>
         <div class="card-body">
-          <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>{{ article.author }} | {{ article.published_at |
-          date: format: 'long' }}
+          <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
+          <p class="mb-0 mt-auto">{{ article.author }} | {{ article.published_at | date: format: 'long' }}</p>
           {%- if article.excerpt.size > 0 -%}
           <p class="mb-0">{{ article.excerpt | | truncate: 30, '...'}}</p>
           {%- else -%}
-          <p class="mb-0">&nbsp;</p>
           {%- endif -%}
         </div>
       </div>

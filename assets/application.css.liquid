@@ -1,7 +1,25 @@
 html,
 body {
 }
-
+a {
+	color: #6c4f3d;
+}
+.btn-primary-custom {
+	background-color: #85752e;
+	border-color: #85752e;
+	color: #fff;
+	transition: all .2s;
+}
+.btn-primary-custom:hover {
+	background-color: #cbb967;
+	border-color: #cbb967;
+}
+.bg-purple {
+	background-color: #bf00ff;
+}
+.bg-light-green {
+	background-color: #00cc00;
+}
 .inner-hero-section {
 	position: relative;
 	overflow: hidden;
@@ -28,15 +46,14 @@ body {
 .card {
 	align-items: center;
 	text-align: center;
-	height: 100%;
+	height: 100%;	
 }
 .card-image {
 	width: 150px;
 }
 .card-body {
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
+	flex-direction: column;	
 }
 .card-body .price {
 	margin-top: auto;
@@ -47,6 +64,17 @@ body {
 	display: flex;
 	align-items: center;
 }
+#shopify-section-header, #shopify-section-footer{
+	background-color: {{settings.navbar_color}};
+}
+.gallery-section img,
+.gallery-section iframe {
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* ===== Slick Slider ===== */
 .slick-prev:before,
 .slick-next:before {
 	color: #3399ff !important;
@@ -54,9 +82,16 @@ body {
 .product-slider-nav {
 	margin-top: 30px;
 }
+.slick-track {
+	display: flex !important;
+}
+
+.slick-slide {
+	height: inherit !important;
+}
+/* ===== Slick Slider ===== */
 
 /* ======= Main Menu =======  */
-
 @media (min-width: 992px) {
 	.dropdown-hover:hover > .dropdown-menu {
 		display: block;
@@ -145,6 +180,9 @@ body {
 .nav-link.has-dropdown.active {
 	color: red !important;
 }
+/* ======= Main Menu =======  */
+
+/* ===== Forms ===== */
 .login-form,
 .forgot-password-form,
 .contact-form {
@@ -157,12 +195,13 @@ body {
 	transition: all 0.3s ease-in-out;
 	opacity: 0;
 }
-.bg-purple {
-	background-color: #bf00ff;
+.is-visible {
+	height: 100%;
+	opacity: 1;
 }
-.bg-light-green {
-	background-color: #00cc00;
-}
+/* ===== Forms ===== */
+
+/* ===== Translate Icon ===== */
 .dropup {
 	position: relative;
 	display: inline-block;
@@ -201,35 +240,8 @@ body {
 	color: #000;
 	font-size: 15px;
 }
-.is-visible {
-	height: 100%;
-	opacity: 1;
-}
+/* ===== Translate Icon ===== */
 
-@media (max-width: 767.98px) {
-	thead th:not(:first-child) {
-		display: none;
-	}
 
-	td,
-	th {
-		display: block;
-		clear: both;
-	}
 
-	td[data-th]:before {
-		content: attr(data-th);
-		float: right;
-	}
-}
 
-#main-navbar {
-	background-color: {{settings.navbar_color}};
-}
-.gallery-section img,
-.gallery-section iframe {
-	width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
