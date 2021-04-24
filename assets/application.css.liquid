@@ -65,7 +65,7 @@ a {
 	align-items: center;
 }
 #shopify-section-header, #shopify-section-footer{
-	background-color: {{settings.navbar_color}};
+	background-color: {{ settings.header_footer_color }};
 }
 .gallery-section img,
 .gallery-section iframe {
@@ -242,6 +242,25 @@ a {
 }
 /* ===== Translate Icon ===== */
 
+
+/* ===== Responsive tables in the account pages ===== */
+@media (max-width: 767.98px) {
+	thead th:not(:first-child) {
+		display: none;
+	}
+
+	td,
+	th {
+		display: block;
+		clear: both;
+	}
+
+	td[data-th]:before {
+		content: attr(data-th);
+		float: right;
+	}
+}
+/* ===== Responsive tables in the account pages ===== */
 
 
 

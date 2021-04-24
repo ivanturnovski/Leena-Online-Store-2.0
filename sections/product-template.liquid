@@ -18,6 +18,11 @@
 		<div class="col-md-6 col-12 g-5">
 			<h1>{{ product.title }}</h1>
 			<p>{{ current_product.price | money }}</p>
+			{% if product.available %}
+			<p class="badge bg-success">In Stock</p>
+			{% else %}
+			<p class="badge bg-danger">Sold Out</p>
+			{% endif %}
 			{%- form 'product', product, class:"product-form", id:"AddToCartForm" -%}
 			<div class="mb-3">
 				<select name="id" id="ProductSelect" class="form-select">
@@ -37,7 +42,8 @@
 			<div class="mb-3">
 				<input type="number" class="form-control" value="1" min="1" name="quantity" id="Quantity">
 			</div>
-			<button type="submit" name="add" id="AddToCart" class="btn btn-secondary btn-lg w-100 rounded-0">
+			<button type="submit" name="add" id="AddToCart" class="btn btn-secondary btn-lg w-100 rounded-0" {% if
+				product.available !=true %}disabled{% endif %}>
 				Add To Cart
 			</button>
 			{%- if section.settings.dynamic_buttons_checkbox == true -%}

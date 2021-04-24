@@ -11,13 +11,6 @@
 		{%- assign featured_product = all_products[item.product] -%}
 		{%- assign featured_product_img = featured_product.featured_media.preview_image -%}
 		<div class="col p-3">
-			{%- comment -%}
-			{%- if section.settings.show_cart_button == true -%}
-			{%- render 'product-card-with-button', product: featured_product, image: featured_product_img -%}
-			{%- else -%}
-			{%- render 'product-card', product: featured_product, image: featured_product_img -%}
-			{%- endif -%}
-			{%- endcomment -%}
 			{%- render 'product-card', product: featured_product, image: featured_product_img -%}
 		</div>
 		{%- endfor -%}
