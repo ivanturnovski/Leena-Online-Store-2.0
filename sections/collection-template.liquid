@@ -2,7 +2,7 @@
 {%- paginate collection.products by products -%}
 <div class="container">
 	<div class="row">
-		<h1 class="text-center my-3">{%- if collection.handle == 'all' -%}ALL {%- endif -%}{{ collection.title }}</h1>
+		<h1 class="text-center my-3">{% if collection.handle == 'all' %}ALL {% endif %}{{ collection.title }}</h1>
 	</div>
 	<div class="row row-cols-md-3 justify-content-between">
 		{%- render 'collection-filter' -%}

@@ -4,7 +4,7 @@
 			{{ section.settings.title }}
 		</h2>
 	</div>
-	<div id="{{ section.id }}"
+	<div id="slick-{{ section.id }}"
 		class="row {% if section.settings.slideshow == false %}row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5{% endif %}">
 		{%- for block in section.blocks -%}
 		{%- assign item = block.settings -%}
@@ -20,7 +20,7 @@
 {%- if section.settings.slideshow == true -%}
 <script>
 	$(document).ready(function () {
-		$('#{{ section.id }}').slick({
+		$('#slick-{{ section.id }}').slick({
 			infinite: true,
 			slidesToShow: 5,
 			slidesToScroll: 3,
