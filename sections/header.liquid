@@ -67,7 +67,8 @@
 		</div>
 
 		{%- form 'localization', id: "localization_form_tag", class: "dropup" -%}
-		<div class="localeBtn">{{ 'globe.png' | asset_img_url: '25x' | img_tag }}</div>
+		<div class="localeBtn"><img width="25" height="25" class="lazyload"
+				data-src="{{ 'globe.png' | asset_img_url: '25x' }}" alt=""></div>
 		<div class="dropup-content">
 			{%- for locale in shop.published_locales -%}
 			<a id="localeItem" class="text-decoration-none" lang="{{ locale.iso_code }}">{{ locale.iso_code }}</a>
