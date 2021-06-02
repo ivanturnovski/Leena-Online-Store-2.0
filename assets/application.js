@@ -56,9 +56,8 @@ var selectCountry = document.getElementById('AddressCountryNew');
 
 if (selectCountry != null) {
 	selectCountry.addEventListener('change', function (e) {
-		var provinces = this.options[this.selectedIndex].getAttribute(
-			'data-provinces'
-		);
+		var provinces =
+			this.options[this.selectedIndex].getAttribute('data-provinces');
 		var provinceSelector = document.getElementById('AddressProvinceNew');
 		var provinceArray = JSON.parse(provinces);
 		// console.log(provinceArray);
@@ -104,4 +103,27 @@ if (localeItems.length > 0) {
 }
 // Language Selector
 
-
+var productInfoAnchors = document.querySelectorAll('#productInfoAnchor');
+var productModal = new bootstrap.Modal(
+	document.getElementById('productInfoModal'),
+	{}
+);
+if (productInfoAnchors.length > 0) {
+	productInfoAnchors.forEach((item) => {
+		item.addEventListener('click', (event) => {
+			var url = '/products/' + item.getAttribute('product-handle') + '.js';
+			fetch(url)
+				.then((resp) => resp.json())
+				.then(function (data) {
+					console.log(data);
+					document.getElementById('productInfoImage').src = data.images[0];
+					document.getElementById('productInfoTitle').innerHTML = data.title;
+					document.getElementById('productInfoPrice').innerHTML =
+						item.getAttribute('product-price');
+					document.getElementById('productInfoDescription').innerHTML =
+						data.description;
+					productModal.show();
+				});
+		});
+	});
+}
