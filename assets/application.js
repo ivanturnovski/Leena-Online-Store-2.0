@@ -103,6 +103,7 @@ if (localeItems.length > 0) {
 }
 // Language Selector
 
+// Product API
 var productInfoAnchors = document.querySelectorAll('#productInfoAnchor');
 var productModal = new bootstrap.Modal(
 	document.getElementById('productInfoModal'),
@@ -122,8 +123,13 @@ if (productInfoAnchors.length > 0) {
 						item.getAttribute('product-price');
 					document.getElementById('productInfoDescription').innerHTML =
 						data.description;
+					document.getElementById('modalItemID').value = data.variants[0].id;
 					productModal.show();
 				});
 		});
 	});
 }
+// Product API
+
+
+

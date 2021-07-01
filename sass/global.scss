@@ -1,10 +1,10 @@
-$color-red: #d13636;
-$color-brown: #f1f0f0da;
+$color-primary: #20e0a0;
+$color-secondary: #cf5b5bda;
 
 body {
-	background-color: $color-brown;
+	background-color: $color-primary;
 }
 
 h1 {
-	color: $color-red;
+	color: $color-secondary;
 }

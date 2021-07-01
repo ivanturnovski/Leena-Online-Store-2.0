@@ -35,8 +35,10 @@
 </div>
 
 {{ 'bootstrap.min.js' | asset_url | script_tag }}
-{{ 'application.js' | asset_url | script_tag }}
+<!-- {{ 'application.js' | asset_url | script_tag }} -->
+<script type="module" src="{{ 'application.js' | asset_url }}"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 {% schema %}
 {
