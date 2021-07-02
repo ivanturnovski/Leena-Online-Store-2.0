@@ -170,3 +170,10 @@ if (modalAddToCartForm != null) {
 }
 
 //Cart API
+
+function update_cart() {
+	fetch('/cart.js')
+		.then((resp) => resp.json())
+		.then((data) => console.log(data))
+		.catch((err) => console.log(err));
+}
