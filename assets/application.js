@@ -126,10 +126,13 @@ if (productInfoAnchors.length > 0) {
 					// document.getElementById('modalItemID').value = data.variants[0].id;
 					var variants = data.variants;
 					var variantSelect = document.getElementById('modalItemID');
-					variants.forEach(function(variant, index) {
+					variants.forEach(function (variant, index) {
 						console.log(variant);
-						variantSelect.options[variantSelect.options.length] = new Option(variant.option1, variant.id);
-					})
+						variantSelect.options[variantSelect.options.length] = new Option(
+							variant.option1,
+							variant.id
+						);
+					});
 					productModal.show();
 				});
 		});
@@ -140,25 +143,30 @@ if (productInfoAnchors.length > 0) {
 //Cart API
 var modalAddToCartForm = document.querySelector('#addToCartForms');
 
-modalAddToCartForm.addEventListener('submit', function (e) {
-	e.preventDefault();
-	let formData = {
-		'items': [{
-		 'id': document.getElementById("modalItemID").value,
-		 'quantity': document.getElementById("modalItemQuantity").value
-		 }]
-	   };
-	   
-	   fetch('/cart/add', {
-		 method: 'POST',
-		 headers: {
-		   'Content-Type': 'application/json'
-		 },
-		 body: JSON.stringify(formData)
-	   })
-	   .then((resp) => resp.json())
-	   .catch((err) => {
-		   console.log('Error:'+ err );
-	   })
-});
+if (modalAddToCartForm != null) {
+	modalAddToCartForm.addEventListener('submit', function (e) {
+		e.preventDefault();
+		let formData = {
+			items: [
+				{
+					id: document.getElementById('modalItemID').value,
+					quantity: document.getElementById('modalItemQuantity').value,
+				},
+			],
+		};
+
+		fetch('/cart/add', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formData),
+		})
+			.then((resp) => resp.json())
+			.catch((err) => {
+				console.log('Error:' + err);
+			});
+	});
+}
+
 //Cart API
