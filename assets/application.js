@@ -155,14 +155,20 @@ if (modalAddToCartForm != null) {
 			],
 		};
 
-		fetch('/cart/add', {
+		fetch('/cart/add.js', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(formData),
 		})
-			.then((resp) => resp.json())
+			.then((resp) => {
+				if (resp.ok) {
+					return resp.json();
+				} else {
+					alert('Out of stock');
+				}
+			})
 			.catch((err) => {
 				console.log('Error:' + err);
 			});
