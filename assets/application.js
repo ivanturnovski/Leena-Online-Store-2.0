@@ -126,14 +126,28 @@ if (productInfoAnchors.length > 0) {
 					// document.getElementById('modalItemID').value = data.variants[0].id;
 					var variants = data.variants;
 					var variantSelect = document.getElementById('modalItemID');
+					variantSelect.innerHTML = '';
 					variants.forEach(function (variant, index) {
 						console.log(variant);
-						variantSelect.options[variantSelect.options.length] = new Option(
-							variant.option1,
-							variant.id
-						);
+						if (variant.available == true) {
+							variantSelect.options[variantSelect.options.length] = new Option(
+								variant.option1,
+								variant.id
+							);
+						}
 					});
 					productModal.show();
+					if (data.available == false) {
+						document
+							.getElementById('modal_add_to_cart')
+							.setAttribute('disabled', 'disabled');
+						console.log('Product Not available');
+					} else {
+						document
+							.getElementById('modal_add_to_cart')
+							.removeAttribute('disabled');
+						console.log('Product available');
+					}
 				});
 		});
 	});
@@ -163,12 +177,14 @@ if (modalAddToCartForm != null) {
 			body: JSON.stringify(formData),
 		})
 			.then((resp) => {
+				console.log(resp.status);
 				if (resp.ok) {
 					return resp.json();
 				} else {
 					alert('Out of stock');
 				}
 			})
+			.then((data) => update_cart())
 			.catch((err) => {
 				console.log('Error:' + err);
 			});
@@ -180,6 +196,13 @@ if (modalAddToCartForm != null) {
 function update_cart() {
 	fetch('/cart.js')
 		.then((resp) => resp.json())
-		.then((data) => console.log(data))
+		.then(
+			(data) =>
+				(document.getElementById('cart_items').innerHTML = data.items.length)
+		)
 		.catch((err) => console.log(err));
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+	update_cart();
+});
