@@ -1,6 +1,6 @@
 {
   "current": {
-    "header_footer_color": "#e5dcb3",
+    "header_footer_color": "#f1ebd1",
     "header_text_font": "assistant_n4",
     "body_text_font": "catamaran_n4",
     "body_font_size": 16,
@@ -30,7 +30,8 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "dynamic_buttons_checkbox": true
+          "dynamic_buttons_checkbox": true,
+          "recomended_products": 4
         }
       },
       "page-template": {
@@ -283,7 +284,7 @@
               "description": "<p>Collection List Template<\/p>",
               "button_url": "\/collections\/bikes",
               "button_text": "Click",
-              "button_color": "#f14242"
+              "button_color": "#815050"
             }
           },
           "23709e4b-f665-44ad-9d84-df4431db0e9c": {

@@ -54,6 +54,39 @@
 	</div>
 </div>
 
+<div class="container">
+	<section id="product_recomendations" class="row justify-content-center my-5">
+		<div class="row text-center">
+			<h1>You may also like</h1>
+		</div>
+		<div id="product_recomendations_body" class="row"></div>
+	</section>
+</div>
+
+<script>
+	var productRecomendationBody = document.getElementById("product_recomendations_body");
+	fetch("/recommendations/products.json?product_id={{ product.id }}&limit={{ section.settings.recomended_products }}")
+		.then(resp => resp.json())
+		.then(({ products }) => {
+			console.log(products);
+
+			if (products.length > 0) {
+				products.forEach(function (product, index) {
+					var card;
+					card = '<div class="col-md-3 g-2">';
+					card += '<div class="card" style="width: 18rem;">';
+					if (product.images.length > 0) {
+						card += '<img class="card-img-top" src="' + product.images[0] + '">';
+					}
+					card += '<div class="card-body">';
+					card += '<h3><a href="' + product.url + '">' + product.title + '</a></h3>';
+					card += '</div></div></div>';
+					productRecomendationBody.innerHTML += card;
+				});
+			}
+		});
+</script>
+
 {% schema %}
 {
 "name": "Product Pages",
@@ -63,6 +96,15 @@
 "id": "dynamic_buttons_checkbox",
 "label": "Enable Dynamic Buttons",
 "default": false
+},
+{
+"type": "range",
+"id": "recomended_products",
+"label": "Number of Recomended Products",
+"min": 4,
+"max": 8,
+"step": 1,
+"default": 4
 }
 ]
 }
