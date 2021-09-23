@@ -191,8 +191,6 @@ if (modalAddToCartForm != null) {
 	});
 }
 
-//Cart API
-
 function update_cart() {
 	fetch('/cart.js')
 		.then((resp) => resp.json())
@@ -206,3 +204,44 @@ function update_cart() {
 document.addEventListener('DOMContentLoaded', function () {
 	update_cart();
 });
+//Cart API
+// Predictive Search
+
+var predictiveSearch = document.getElementById('search');
+var timer;
+var offcanvasSearch = document.getElementById('offcanvasSearchResult');
+var bsoffcanvas = new bootstrap.Offcanvas(offcanvasSearch);
+
+if (predictiveSearch != null) {
+	predictiveSearch.addEventListener('input', function (e) {
+		clearTimeout(timer);
+		if (predictiveSearch.value) {
+			timer = setTimeout(fetchPredictiveSearch, 3000);
+		}
+	});
+}
+
+function fetchPredictiveSearch() {
+	fetch(
+		`search/suggest.json?q=${predictiveSearch.value}&resources[type]=product`
+	)
+		.then((resp) => resp.json())
+		.then((data) => {
+			console.log(data);
+			var products = data.resources.results.products;
+			document.getElementById('search_results_body').innerHTML = '';
+			products.forEach(function (product, index) {
+				document.getElementById('search_results_body').innerHTML += `
+				<div class="card" style="width: 18rem;">
+					<img src="${product.image}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">${product.title}</h5>
+						<p class="card-text">$${product.price}</p>
+					</div>
+				</div>
+				`;
+			});
+			bsoffcanvas.show();
+		});
+}
+// Predictive Search
