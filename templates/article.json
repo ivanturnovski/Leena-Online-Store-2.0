@@ -1,37 +1,64 @@
 {
-	"layout": "theme-blog-with-sidebar",
-	"sections": {
-		"template": {
-			"type": "template-article",
-			"blocks": {
-				"8fe6f236-f713-4bc5-9dad-581de7291259": {
-					"type": "title",
-					"settings": {}
-				},
-				"f6ed100d-8130-467b-b839-a84665360f66": {
-					"type": "featured_image",
-					"settings": {}
-				},
-				"fc836f0f-0716-47d5-a6e0-b0e1cf90d99f": {
-					"type": "meta",
-					"settings": {}
-				},
-				"982e3398-6a9a-4d96-8ff7-76e1d9f25b94": {
-					"type": "content",
-					"settings": {}
-				}
-			},
-			"block_order": [
-				"8fe6f236-f713-4bc5-9dad-581de7291259",
-				"f6ed100d-8130-467b-b839-a84665360f66",
-				"fc836f0f-0716-47d5-a6e0-b0e1cf90d99f",
-				"982e3398-6a9a-4d96-8ff7-76e1d9f25b94"
-			],
-			"settings": {}
-		},
-		"sidebar": {
-			"type": "sidebar-article"
-		}
-	},
-	"order": ["template", "sidebar"]
+  "layout": "theme-blog-with-sidebar",
+  "sections": {
+    "template": {
+      "type": "template-article",
+      "blocks": {
+        "8fe6f236-f713-4bc5-9dad-581de7291259": {
+          "type": "title",
+          "settings": {}
+        },
+        "f6ed100d-8130-467b-b839-a84665360f66": {
+          "type": "featured_image",
+          "settings": {}
+        },
+        "fc836f0f-0716-47d5-a6e0-b0e1cf90d99f": {
+          "type": "meta",
+          "settings": {}
+        },
+        "982e3398-6a9a-4d96-8ff7-76e1d9f25b94": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "8fe6f236-f713-4bc5-9dad-581de7291259",
+        "f6ed100d-8130-467b-b839-a84665360f66",
+        "fc836f0f-0716-47d5-a6e0-b0e1cf90d99f",
+        "982e3398-6a9a-4d96-8ff7-76e1d9f25b94"
+      ],
+      "settings": {}
+    },
+    "sidebar": {
+      "type": "sidebar-article",
+      "blocks": {
+        "c8b9ee74-fd78-48b3-9cab-21dcc9f381d1": {
+          "type": "sidebar_image",
+          "settings": {
+            "title": "Article Sidebar Title",
+            "image": "shopify:\/\/shop_images\/shopify-bag.png",
+            "url": ""
+          }
+        },
+        "2913bc62-dae1-4012-bb1b-df8b9caa63a7": {
+          "type": "sidebar_text",
+          "settings": {
+            "title": "Article Sidebar Text",
+            "description": "<p>Test<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c8b9ee74-fd78-48b3-9cab-21dcc9f381d1",
+        "2913bc62-dae1-4012-bb1b-df8b9caa63a7"
+      ],
+      "settings": {
+        "show_sidebar": "yes"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "sidebar"
+  ]
 }
