@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-cart",
+      "blocks": {
+        "016d6417-7085-4c02-93a8-7c3ad27b8c4c": {
+          "type": "cart_buttons",
+          "settings": {}
+        },
+        "62668bd8-b8c1-49e4-ac42-f0a5508f10f5": {
+          "type": "cart_total",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "016d6417-7085-4c02-93a8-7c3ad27b8c4c",
+        "62668bd8-b8c1-49e4-ac42-f0a5508f10f5"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
