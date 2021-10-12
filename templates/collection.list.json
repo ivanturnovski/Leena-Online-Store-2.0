@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-collection-list",
+      "blocks": {
+        "d795cd83-816e-423c-a1cb-1bfc59ebfb3d": {
+          "type": "products_number",
+          "settings": {}
+        },
+        "2db44d35-90d2-4154-8dbe-060cd08c677b": {
+          "type": "sort_order",
+          "settings": {}
+        },
+        "7a451f0e-76bd-4338-a2c2-57790a9b209a": {
+          "type": "product_price",
+          "settings": {}
+        },
+        "278d27fb-67c7-4c81-996e-938c75cb18dd": {
+          "type": "stock_status",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "d795cd83-816e-423c-a1cb-1bfc59ebfb3d",
+        "2db44d35-90d2-4154-8dbe-060cd08c677b",
+        "7a451f0e-76bd-4338-a2c2-57790a9b209a",
+        "278d27fb-67c7-4c81-996e-938c75cb18dd"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
