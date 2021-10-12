@@ -160,12 +160,6 @@
           "enable_payment_types": true
         }
       },
-      "collection-template": {
-        "type": "collection-template",
-        "settings": {
-          "products": 12
-        }
-      },
       "1619098944c88bd80b": {
         "type": "gallery",
         "blocks": {
@@ -193,7 +187,7 @@
           "08a0ee60-4f08-47b8-a406-88d1118dd2c3": {
             "type": "video",
             "settings": {
-              "title": "",
+              "title": "Bike Riding",
               "video_url": "https:\/\/www.youtube.com\/watch?v=h6t5eDe5gUE"
             }
           },

@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col col-sm-6 col-md-4 col-lg-3">
 	<select name="sorting" id="sort_by" class="form-select form-select-sm">
 		{%- for option in collection.sort_options -%}
 		{% capture selected %}{% if option.value == collection.sort_by %}selected{% endif %}{% endcapture %}
@@ -6,4 +6,3 @@
 		{%- endfor -%}
 	</select>
 </div>
-<div class="col d-flex justify-content-end align-items-center">{{ collection.products_count }} Products</div>
