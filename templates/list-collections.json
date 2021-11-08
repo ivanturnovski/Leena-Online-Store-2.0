@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-list-collections",
+      "blocks": {
+        "75b7298c-83fa-48b6-8549-71cf9e913dfb": {
+          "type": "coll_title",
+          "settings": {}
+        },
+        "155b1937-84f4-42ad-bbe4-e3f28a24e928": {
+          "type": "coll_desc",
+          "settings": {}
+        },
+        "63ea44a8-4753-478b-9861-3abd2c40d11f": {
+          "type": "coll_img",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "75b7298c-83fa-48b6-8549-71cf9e913dfb",
+        "155b1937-84f4-42ad-bbe4-e3f28a24e928",
+        "63ea44a8-4753-478b-9861-3abd2c40d11f"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
