@@ -1,10 +1,9 @@
 {
   "current": {
-    "header_footer_color": "#f1ebd1",
+    "header_footer_color": "#ae886b",
     "header_text_font": "assistant_n4",
     "body_text_font": "catamaran_n4",
     "body_font_size": 16,
-    "navbar_color": "#ede7cb",
     "sections": {
       "header": {
         "type": "header",
@@ -40,54 +39,6 @@
           "container": "container",
           "show_published_date": true
         }
-      },
-      "page-faq-template": {
-        "type": "page-faq-template",
-        "blocks": {
-          "5e55eebf-bb97-496c-946c-c7e31fcb6da8": {
-            "type": "faq",
-            "settings": {
-              "title": "FAQ Title Exampe",
-              "answer": "<p>Hello World<\/p>"
-            }
-          },
-          "336e5d8d-35a7-4bcb-a58c-c34df687de83": {
-            "type": "faq",
-            "settings": {
-              "title": "Do you fund internationally?",
-              "answer": "<p>Yes We Do!<\/p>"
-            }
-          },
-          "376ab560-d782-4360-b074-58ed5c7660e7": {
-            "type": "faq",
-            "settings": {
-              "title": "FAQ Title Exampe",
-              "answer": "<p>Hello <\/p>"
-            }
-          },
-          "39a95bab-b44e-4475-98de-4dd65ebc6bc5": {
-            "type": "faq",
-            "settings": {
-              "title": "FAQ Title Exampe",
-              "answer": "<p>Hello <\/p>"
-            }
-          },
-          "00985205-69c6-4735-81ab-6436b886984c": {
-            "type": "faq",
-            "settings": {
-              "title": "FAQ Title Exampe",
-              "answer": "<p>Hello<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "5e55eebf-bb97-496c-946c-c7e31fcb6da8",
-          "336e5d8d-35a7-4bcb-a58c-c34df687de83",
-          "376ab560-d782-4360-b074-58ed5c7660e7",
-          "39a95bab-b44e-4475-98de-4dd65ebc6bc5",
-          "00985205-69c6-4735-81ab-6436b886984c"
-        ],
-        "settings": {}
       },
       "sidebar-article": {
         "type": "sidebar-article",
