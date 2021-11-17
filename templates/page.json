@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-page-default",
+      "blocks": {
+        "page_date_posted": {
+          "type": "page_date_posted",
+          "settings": {}
+        },
+        "page_title": {
+          "type": "page_title",
+          "settings": {}
+        },
+        "page_content": {
+          "type": "page_content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "page_date_posted",
+        "page_title",
+        "page_content"
+      ],
+      "settings": {
+        "container": "container",
+        "show_published_date": true
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}

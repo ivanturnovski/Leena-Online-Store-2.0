@@ -33,13 +33,6 @@
           "recomended_products": 4
         }
       },
-      "page-template": {
-        "type": "page-template",
-        "settings": {
-          "container": "container",
-          "show_published_date": true
-        }
-      },
       "sidebar-article": {
         "type": "sidebar-article",
         "blocks": {
