@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-search",
+      "blocks": {
+        "38b4f1e6-8c53-45e5-ba0f-84e111e9fad3": {
+          "type": "search_input",
+          "settings": {}
+        },
+        "4582e697-701a-4810-97fb-9c9caa481259": {
+          "type": "search_buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "38b4f1e6-8c53-45e5-ba0f-84e111e9fad3",
+        "4582e697-701a-4810-97fb-9c9caa481259"
+      ],
+      "settings": {
+        "button_color": "#3d60ef"
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
