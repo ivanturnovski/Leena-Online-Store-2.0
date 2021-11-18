@@ -3,18 +3,9 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-12 g-5">
-			<div class="product-slider-for">
-				{%- for image in product.images -%}
-				<img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt}}">
-				{%- endfor -%}
-			</div>
-			<div class="product-slider-nav">
-				{%- for image in product.images -%}
-				<img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt}}">
-				{%- endfor -%}
-			</div>
-		</div>
+		{% for block in section.blocks %}
+		{% case block.type %}
+		{% when 'product_main' %}
 		<div class="col-md-6 col-12 g-5">
 			<h1>{{ product.title }}</h1>
 			<p>{{ current_product.price | money }}</p>
@@ -40,6 +31,7 @@
 				</select>
 			</div>
 			<div class="mb-3">
+				<label for="Quantity" class="form-label">Quantity:</label>
 				<input type="number" class="form-control" value="1" min="1" name="quantity" id="Quantity">
 			</div>
 			<button type="submit" name="add" id="AddToCart" class="btn btn-secondary btn-lg w-100 rounded-0" {% if
@@ -50,17 +42,36 @@
 			{{ form | payment_button }}
 			{%- endif -%}
 			{%- endform -%}
+			<p>{{ product.description }}</p>
 		</div>
+		{% when 'product_carousel' %}
+		<div class="col-md-6 col-12 g-5">
+			<div class="product-slider-for">
+				{%- for image in product.images -%}
+				<img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt}}">
+				{%- endfor -%}
+			</div>
+			<div class="product-slider-nav">
+				{%- for image in product.images -%}
+				<img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt}}">
+				{%- endfor -%}
+			</div>
+		</div>
+		{% else %}
+		{% endcase %}
+		{% endfor %}
 	</div>
-</div>
 
-<div class="container">
-	<section id="product_recomendations" class="row justify-content-center my-5">
-		<div class="row text-center">
-			<h1>You may also like</h1>
-		</div>
-		<div id="product_recomendations_body" class="row"></div>
-	</section>
+
+
+	<div class="row">
+		<section id="product_recomendations" class="justify-content-center my-5">
+			<div class="text-center">
+				<h1>You may also like</h1>
+			</div>
+			<div id="product_recomendations_body" class="row"></div>
+		</section>
+	</div>
 </div>
 
 <script>
@@ -74,7 +85,7 @@
 				products.forEach(function (product, index) {
 					var card;
 					card = '<div class="col-md-3 g-2">';
-					card += '<div class="card" style="width: 18rem;">';
+					card += '<div class="card">';
 					if (product.images.length > 0) {
 						card += '<img class="card-img-top" src="' + product.images[0] + '">';
 					}
@@ -105,6 +116,18 @@
 "max": 8,
 "step": 1,
 "default": 4
+}
+],
+"blocks": [
+{
+"type": "product_main",
+"name": "Product Main",
+"limit": 1
+},
+{
+"type": "product_carousel",
+"name": "Product Carousel",
+"limit": 1
 }
 ]
 }

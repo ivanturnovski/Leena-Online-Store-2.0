@@ -26,13 +26,6 @@
           "button_link": "\/blogs\/development"
         }
       },
-      "product-template": {
-        "type": "product-template",
-        "settings": {
-          "dynamic_buttons_checkbox": true,
-          "recomended_products": 4
-        }
-      },
       "sidebar-article": {
         "type": "sidebar-article",
         "blocks": {

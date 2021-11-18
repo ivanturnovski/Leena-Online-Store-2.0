@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-product",
+      "blocks": {
+        "carousel": {
+          "type": "product_carousel",
+          "settings": {}
+        },
+        "main": {
+          "type": "product_main",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "carousel",
+        "main"
+      ],
+      "settings": {
+        "dynamic_buttons_checkbox": true,
+        "recomended_products": 4
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}
