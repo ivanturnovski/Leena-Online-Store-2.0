@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const themeKit = require('@shopify/themekit');
-const sass = require('gulp-sass');
+// const sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean-css');
 // const bundle = require('gulp-bundle-assets');
 
