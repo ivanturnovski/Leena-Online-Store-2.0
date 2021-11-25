@@ -16,6 +16,7 @@
 								<th>{{ 'general.cart.price' | t }}</th>
 								<th>{{ 'general.cart.quantity' | t }}</th>
 								<th>{{ 'general.cart.total' | t }}</th>
+								<th> Additional Info </th>
 							</thead>
 							<tbody>
 								{%- for item in cart.items -%}
@@ -32,7 +33,7 @@
 											href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{
 											'general.cart.remove' | t }}</a>
 									</td>
-									<td>{{ item.price | money }}</td>
+									<td>{{ item.original_price | money }}</td>
 									<td>
 										<input type="number" name="updates[]" id="updates_{{ item.key }}"
 											value="{{ item.quantity }}" min="0">
@@ -41,8 +42,13 @@
 										{%- if item.original_line_price != item.line_price -%}{{
 										item.original_line_price | money }}{%-
 										endif -%}
-										{{ item.line_price | money }}
+										{{ item.original_line_price | money }}
 										{%- for discount in item.discounts -%}{{ discount.title }}{%- endfor -%}
+									</td>
+									<td>
+										{% for property in item.properties %}
+										{{ property.first }} : {{ property.last }}
+										{% endfor %}
 									</td>
 								</tr>
 								{%- endfor -%}

@@ -38,6 +38,7 @@
             <th>SKU</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Info</th>
             <th>Total</th>
           </tr>
         </thead>
@@ -48,21 +49,24 @@
             <td data-th="SKU">{{ line_item.sku }}</td>
             <td data-th="Price">{{ line_item.original_price | money}}</td>
             <td data-th="Quantity">{{ line_item.quantity }}</td>
+            <td data-th="Info">{% for property in line_item.properties %}
+              {{ property.first }} : {{ property.last }}
+              {% endfor %}</td>
             <td data-th="Total">{{ line_item.line_price | money }}</td>
           </tr>
           {%- endfor -%}
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="4">SUBTOTAL</td>
-            <td>{{ order.line_items_subtotal_price | money }}</td>
+            <td colspan="5">SUBTOTAL</td>
+            <td>{{ order.subtotal_price | money }}</td>
           </tr>
           <tr>
-            <td colspan="4">Shipping</td>
+            <td colspan="5">Shipping</td>
             <td>{{ order.shipping_price | money }}</td>
           </tr>
           <tr>
-            <td colspan="4"><strong>TOTAL</strong></td>
+            <td colspan="5"><strong>TOTAL</strong></td>
             <td><strong>{{ order.total_price | money }}</strong></td>
           </tr>
         </tfoot>

@@ -34,6 +34,11 @@
 				<label for="Quantity" class="form-label">Quantity:</label>
 				<input type="number" class="form-control" value="1" min="1" name="quantity" id="Quantity">
 			</div>
+			<div class="mb-3">
+				<input type="hidden" name="properties[Gift]" value="No">
+				<input id="gift" type="checkbox" name="properties[Gift]" value="Yes">
+				<label for="gift">Wrap Gift +1$</label>
+			</div>
 			<button type="submit" name="add" id="AddToCart" class="btn btn-secondary btn-lg w-100 rounded-0" {% if
 				product.available !=true %}disabled{% endif %}>
 				Add To Cart
