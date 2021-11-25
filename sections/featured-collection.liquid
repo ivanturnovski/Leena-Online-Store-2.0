@@ -32,7 +32,7 @@
 
 
 					{%- if section.settings.show_cart_button == true -%}
-					{%- form 'product', product, class:"product-form", id:"AddToCartForm" -%}
+					{%- form 'product', product, class: "product-form", id: "AddToCartForm" -%}
 					<div class="mb-3">
 						<select name="id" id="ProductSelect" class="form-select form-select-sm">
 							{%- for variant in product.variants -%}
@@ -53,8 +53,8 @@
 							id="Quantity">
 					</div>
 					<button type="submit" name="add" id="AddToCart"
-						class="btn btn-primary-custom btn-sm w-100 rounded-0" {% if product.available !=true
-						%}disabled{% endif %}>
+						class="btn btn-primary-custom btn-sm w-100 rounded-0"
+						{% if product.available != true %}disabled{% endif %}>
 						Add To Cart
 					</button>
 					{%- endform -%}

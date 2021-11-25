@@ -14,7 +14,7 @@
 			{% else %}
 			<p class="badge bg-danger">Sold Out</p>
 			{% endif %}
-			{%- form 'product', product, class:"product-form", id:"AddToCartForm" -%}
+			{%- form 'product', product, class: "product-form", id: "AddToCartForm" -%}
 			<div class="mb-3">
 				<select name="id" id="ProductSelect" class="form-select">
 					{%- for variant in product.variants -%}
@@ -40,7 +40,7 @@
 				<label for="gift">Wrap Gift +1$</label>
 			</div>
 			<button type="submit" name="add" id="AddToCart" class="btn btn-secondary btn-lg w-100 rounded-0" {% if
-				product.available !=true %}disabled{% endif %}>
+				product.available != true %}disabled{% endif %}>
 				Add To Cart
 			</button>
 			{%- if section.settings.dynamic_buttons_checkbox == true -%}
@@ -83,7 +83,9 @@
 	var productRecomendationBody = document.getElementById("product_recomendations_body");
 	fetch("/recommendations/products.json?product_id={{ product.id }}&limit={{ section.settings.recomended_products }}")
 		.then(resp => resp.json())
-		.then(({ products }) => {
+		.then(({
+			products
+		}) => {
 			console.log(products);
 
 			if (products.length > 0) {

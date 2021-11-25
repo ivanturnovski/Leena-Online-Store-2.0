@@ -2,7 +2,7 @@
 	<select name="sorting" id="sort_by" class="form-select form-select-sm">
 		{%- for option in collection.sort_options -%}
 		{% capture selected %}{% if option.value == collection.sort_by %}selected{% endif %}{% endcapture %}
-		<option value="{{ option.value }}" {{selected}}>{{ option.name }}</option>
+		<option value="{{ option.value }}" {{ selected }}>{{ option.name }}</option>
 		{%- endfor -%}
 	</select>
 </div>

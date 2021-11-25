@@ -13,7 +13,7 @@
 			alt="{{ section.settings.image.alt }}" />
 	</picture>
 	{%- else -%}
-	{% capture current %}{% cycle 1,2%}{% endcapture %}
+	{% capture current %}{% cycle 1, 2 %}{% endcapture %}
 	{{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
 	{%- endif -%}
 	<div class="container">

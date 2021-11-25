@@ -8,8 +8,7 @@
       <h6>Account Details</h6>
       {{ customer.default_address | format_address }}
       <a href="{{ routes.account_addresses_url }}" class="btn btn-light">View Addresses <span
-          class="badge bg-success">{{
-          customer.addresses_count }}</span></a>
+          class="badge bg-success">{{ customer.addresses_count }}</span></a>
     </div>
     <div class="col-12 col-md-8 g-3">
       <div class="customer_orders">
@@ -33,11 +32,11 @@
               <td data-th="Orders#">
                 <a href="{{ order.customer_url }}">{{ order.name }}</a>
               </td>
-              <td data-th="Payment Status"><span class="badge {{ financial_status}}">{{ order.financial_status_label
+              <td data-th="Payment Status"><span class="badge {{ financial_status }}">{{ order.financial_status_label
                   }}</span>
               </td>
-              <td data-th="Fulfillment Status"><span class="badge {{ fulfillment_status }}">{{
-                  order.fulfillment_status_label }}</span></td>
+              <td data-th="Fulfillment Status">
+                <span class="badge {{ fulfillment_status }}">{{ order.fulfillment_status_label }}</span></td>
               <td data-th="Order Date">{{ order.created_at | time_tag: format: 'date' }}</td>
               <td data-th="Order Price">{{ order.subtotal_price | money }}</td>
               <td data-th="Shipping Price">{{ order.shipping_price | money }}</td>

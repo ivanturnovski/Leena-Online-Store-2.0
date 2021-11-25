@@ -9,8 +9,8 @@
 			<ul id="main-menu" class="navbar-nav me-auto">
 				{%- for link in linklists.main-menu.links -%}
 				<li class="nav-item{% if link.links != blank %} dropdown dropdown-hover{%- endif -%}">
-					<a class="nav-link{% if link.links != blank %} has-dropdown{%- endif -%}" href="{{ link.url }}">{{
-						link.title }}{%- if link.links != blank -%}<i class="arrow down"></i>{%- endif -%}
+					<a class="nav-link{% if link.links != blank %} has-dropdown{%- endif -%}" href="{{ link.url }}">
+						{{ link.title }}{%- if link.links != blank -%}<i class="arrow down"></i>{%- endif -%}
 					</a>
 
 					{%- if link.links != blank -%}

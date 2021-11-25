@@ -2,13 +2,13 @@
 	{%- for block in section.blocks -%}
 	{%- assign item = block.settings -%}
 	<div>
-		<img src="{{ item.img | img_url: '1x1' }}" data-src="{{ item.img  | img_url: '2048x680'}}" alt=""
+		<img src="{{ item.img | img_url: '1x1' }}" data-src="{{ item.img | img_url: '2048x680' }}" alt=""
 			class="lazyload">
 		<div class="hero text-center">
 			<h1>{{ item.title }}</h1>
 			{{ item.description }}
-			<a href="{{ item.button_url }}" class="btn" style="background-color: {{ item.button_color }};">{{
-				item.button_text }}</a>
+			<a href="{{ item.button_url }}" class="btn" style="background-color: {{ item.button_color }};">
+				{{ item.button_text }}</a>
 		</div>
 	</div>
 	{%- endfor -%}
